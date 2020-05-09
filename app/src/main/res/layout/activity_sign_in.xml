@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="#0000FF"
+                android:textColor="#000"
                 android:text="First time here? SIGN UP"/>
 
         </LinearLayout>
