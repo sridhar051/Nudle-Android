@@ -1,8 +1,10 @@
-package com.intern.nudleapp;
+package com.intern.nudleapp.userAccount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.intern.nudleapp.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
