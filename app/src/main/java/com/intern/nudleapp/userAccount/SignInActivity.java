@@ -15,7 +15,7 @@ import com.intern.nudleapp.R;
 public class SignInActivity extends AppCompatActivity {
 
     TextView text_SignUp;
-//    Button sign_in;
+    Button sign_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +30,13 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
             }
         });
-//        sign_in = findViewById(R.id.button_SignIn);
-//        sign_in.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(SignInActivity.this, MainActivity.class));
-//            }
-//        });
+        sign_in = findViewById(R.id.button_SignIn);
+        sign_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignInActivity.this, MainActivity.class));
+            }
+        });
 
     }
 }
