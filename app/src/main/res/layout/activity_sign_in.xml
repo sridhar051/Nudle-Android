@@ -14,9 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+
         android:src="@drawable/nudle_logo"
         android:background="@drawable/custom_image"
         android:backgroundTint="#fff"/>
+
+        android:src="@drawable/logo"/>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -33,31 +37,40 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_email_SignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email:" />
+                app:errorEnabled="true"
+                android:layout_marginBottom="5dp"
+                >
 
-            <EditText
-                android:id="@+id/user_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:drawableLeft="@drawable/ic_mail"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"
+                    android:drawableStart="@drawable/ic_mail"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:text="Password:" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/user_password"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_password_SignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:inputType="textPassword"
-                android:drawableLeft="@drawable/ic_password"/>
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="15dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:hint="Password"
+                    android:drawableStart="@drawable/ic_password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/button_SignIn"
@@ -68,7 +81,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/custom_button_sign_in"
-                android:text="SIGN IN" />
+                android:text="SIGN IN"
+                android:onClick="createSession"/>
 
             <View
                 android:layout_width="match_parent"
