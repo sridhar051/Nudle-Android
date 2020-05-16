@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_home"
-        android:title="Home"/>
-    <item android:id="@+id/menu_shop_by_cat"
-        android:title="Shop by Category"/>
-    <item android:id="@+id/menu_orders"
-        android:title="My Orders"/>
-    <item android:id="@+id/menu_wish_list"
-        android:title="My Wish List"/>
-    <item android:id="@+id/menu_account"
-        android:title="My Account"/>
+    <group android:checkableBehavior="single" android:id="@+id/menu_basic_func">
+        <item android:id="@+id/menu_home"
+            android:title="Home"
+            android:icon="@drawable/home_custom"/>
+        <item android:id="@+id/menu_shop_by_cat"
+            android:title="Shop by Category"
+            android:icon="@drawable/shop_by_cat"/>
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/menu_users_func">
+        <item android:id="@+id/menu_orders"
+            android:title="My Orders"
+            android:icon="@drawable/my_orders"/>
+        <item android:id="@+id/menu_wish_list"
+            android:title="My Wish List"
+            android:icon="@drawable/my_wishlist"/>
+        <item android:id="@+id/menu_account"
+            android:title="My Account"
+            android:icon="@drawable/default_user_black"/>
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/menu_dev_func">
+        <item android:id="@+id/menu_settings"
+            android:title="Settings"
+            android:icon="@drawable/menu_settings"/>
+        <item android:id="@+id/menu_rate"
+            android:title="Rate Us"
+            android:icon="@drawable/menu_rate"/>
+    </group>
+
 </menu>
