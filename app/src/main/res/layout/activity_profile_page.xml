@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePageActivity"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+
+    >
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_profile"
+        android:backgroundTint="#253a4b"
+        android:id="@+id/profile_back"
+        android:outlineAmbientShadowColor="#000000"
+        android:outlineSpotShadowColor="#000000"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@color/default_user_icon_background"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="130dp"
+                android:id="@+id/user_profile_pic"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/op1"
+                android:layout_marginTop="150dp"
+                android:layout_below="@+id/user_profile_pic">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Go Shopping"
+                    android:textColor="#253a4b"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_shopping"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/back_shopping"
+                    android:drawablePadding="20dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/op1"
+                android:id="@+id/op2"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Cart"
+                    android:textColor="#253a4b"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_cart"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/cart"
+                    android:drawablePadding="20dp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/op2"
+                android:id="@+id/op3"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Points"
+                    android:textColor="#253a4b"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_points"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/points"
+                    android:drawablePadding="20dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/op3"
+                android:id="@+id/op4"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gift"
+                    android:textColor="#253a4b"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_gifts"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/gitfs"
+                    android:drawablePadding="20dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/op4"
+                android:id="@+id/op5"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textColor="#253a4b"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_address"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@drawable/location"
+                    android:drawablePadding="20dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/op5"
+                android:id="@+id/op6"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:alpha="0.7"
+                    android:textColor="#253a4b"
+                    android:textSize="20dp"
+                    android:id="@+id/profile_logout"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="20dp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
