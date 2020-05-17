@@ -12,13 +12,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
+import com.synnapps.carouselview.ImageListener;
 
+import android.widget.ImageView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity{
     NavigationView navigationView;
     private DrawerLayout mdrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private int[] mimages=new int[]{
+            R.drawable.sale1,R.drawable.sale2,R.drawable.sale3
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +52,20 @@ public class MainActivity extends AppCompatActivity{
                         startActivity(new Intent(MainActivity.this,ProfilePageActivity.class));
                 }
                 return true;
+            }
+        });
+        CarouselView carouselView=findViewById(R.id.carousel);
+        carouselView.setPageCount(mimages.length);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(mimages[position]);
+            }
+        });
+        carouselView.setImageClickListener(new ImageClickListener() {
+            @Override
+            public void onClick(int position) {
+
             }
         });
 

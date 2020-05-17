@@ -11,6 +11,18 @@
     <include
         android:id="@+id/main_toolbar"
         layout="@layout/toolbar" />
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/main_toolbar"
+
+        app:fillColor="#FFFFFFFF"
+        app:pageColor="#FFFFFFFF"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" />
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"
