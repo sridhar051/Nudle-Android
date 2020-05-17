@@ -21,8 +21,6 @@ public class SignInActivity extends AppCompatActivity {
 
     TextView text_SignUp;
 
-    Button sign_in;
-
     private TextInputLayout user_email, user_password;
     private String inputEmail, inputPassword;
 
@@ -43,14 +41,6 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
             }
         });
-        sign_in = findViewById(R.id.button_SignIn);
-        sign_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignInActivity.this, MainActivity.class));
-            }
-        });
-
     }
 
     private boolean validateEmail() {
@@ -79,9 +69,6 @@ public class SignInActivity extends AppCompatActivity {
         if(!validateEmail() | !validatePassword())
             return;
 
-        String input = "Email: " + user_email.getEditText().getText().toString().trim() + "\n";
-        input = input + "Password: " + user_password.getEditText().getText().toString().trim();
-
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(SignInActivity.this, MainActivity.class));
     }
 }
