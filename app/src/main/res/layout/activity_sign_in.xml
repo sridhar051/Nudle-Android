@@ -10,17 +10,13 @@
     android:background="@drawable/nudle_bg"
     tools:context=".userAccount.SignInActivity">
 
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-
         android:src="@drawable/nudle_logo"
-        android:background="@drawable/custom_image"
         android:backgroundTint="#fff"/>
-
-        android:src="@drawable/logo"/>
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -50,7 +46,8 @@
                     android:layout_height="match_parent"
                     android:inputType="textEmailAddress"
                     android:hint="Email"
-                    android:drawableStart="@drawable/ic_mail"/>
+                    android:drawableStart="@drawable/ic_mail"
+                    android:drawablePadding="10dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +65,8 @@
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
                     android:hint="Password"
-                    android:drawableStart="@drawable/ic_password"/>
+                    android:drawableStart="@drawable/ic_password"
+                    android:drawablePadding="10dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="#000"
+                android:textColor="#DC143C"
                 android:text="First time here? SIGN UP"/>
 
         </LinearLayout>
