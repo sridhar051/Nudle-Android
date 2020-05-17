@@ -5,28 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:openDrawer="end"
-    tools:context=".MainActivity">
-        <include layout="@layout/toolbar"
-            android:id="@+id/main_toolbar"
-            />
+    tools:context=".MainActivity"
+    tools:openDrawer="end">
+
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar" />
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/main_toolbar">
+
         <com.google.android.material.navigation.NavigationView
+            android:id="@+id/main_navbar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/main_navbar"
-            app:menu="@menu/nav_menu"
             android:layout_gravity="start"
-            app:headerLayout="@layout/nav_header"/>
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_menu" />
+
     </androidx.drawerlayout.widget.DrawerLayout>
-
-
-
-
 
 </RelativeLayout>
