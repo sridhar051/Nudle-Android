@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.intern.nudleapp.R;
 
@@ -15,6 +16,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private TextInputLayout user_email, user_mobile, user_password, user_confirmed_password;
     private String inputEmail, inputMobile, inputPassword, inputConfirmedPassword;
+    private FloatingActionButton back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,6 @@ public class SignUpActivity extends AppCompatActivity {
         user_mobile = findViewById(R.id.user_mobile_SignUp);
         user_password = findViewById(R.id.user_password_SignUp);
         user_confirmed_password = findViewById(R.id.user_confirm_password_SignUp);
-
-        Button button_sign_up = findViewById(R.id.button_SignUp);
     }
 
     private boolean validateEmail() {
@@ -80,11 +80,13 @@ public class SignUpActivity extends AppCompatActivity {
         if(!validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
             return;
 
-        String input = "Email: " + user_email.getEditText().getText().toString().trim() + "\n";
-        input = input + "Mobile: " + user_mobile.getEditText().getText().toString().trim() + "\n";
-        input = input + "Password: " + user_password.getEditText().getText().toString().trim();
+        //Post User Details on the server to get him registered
 
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    public void onBackPress(View v) {
+        onBackPressed();
     }
 
 
