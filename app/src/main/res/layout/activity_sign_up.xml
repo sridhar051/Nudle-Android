@@ -13,6 +13,18 @@
         android:layout_height="0dp"
         android:layout_weight="0.255">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#fff"
+            android:src="@drawable/back_profile"
+            android:onClick="onBackPress"/>
+
         <ImageView
             android:id="@+id/img"
             android:layout_width="wrap_content"
@@ -81,7 +93,8 @@
                         android:layout_height="match_parent"
                         android:inputType="textEmailAddress"
                         android:hint="Email"
-                        android:drawableStart="@drawable/ic_mail"/>
+                        android:drawableStart="@drawable/ic_mail"
+                        android:drawablePadding="10dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,7 +110,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Mobile number"
-                        android:drawableStart="@drawable/ic_mobile" />
+                        android:drawableStart="@drawable/ic_mobile"
+                        android:drawablePadding="10dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +129,8 @@
                         android:layout_height="match_parent"
                         android:inputType="textPassword"
                         android:hint="Password"
-                        android:drawableStart="@drawable/ic_password" />
+                        android:drawableStart="@drawable/ic_password"
+                        android:drawablePadding="10dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,7 +148,7 @@
                         android:inputType="textPassword"
                         android:hint="Confirm Password"
                         android:drawableStart="@drawable/ic_confirm"
-                        />
+                        android:drawablePadding="10dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
