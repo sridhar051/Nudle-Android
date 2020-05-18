@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".ProfilePageActivity"
-
-    >
+    tools:context=".ProfilePageActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_back"

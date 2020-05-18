@@ -13,23 +13,75 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
+import com.synnapps.carouselview.ImageListener;
+import java.util.ArrayList;
+import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.widget.ImageView;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity{
+
+    RecyclerView recyclerView;
+    ProductAdapter adapter;
+    List<Product> productList;
+
     NavigationView navigationView;
     private DrawerLayout mdrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private int[] mimages=new int[]{
+            R.drawable.sale1,R.drawable.sale2,R.drawable.sale3
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        navigationView = (NavigationView) findViewById(R.id.main_navbar);
-        Toolbar mtool = (Toolbar) findViewById(R.id.main_toolbar);
+        navigationView = (NavigationView)findViewById(R.id.main_navbar);
+        Toolbar mtool = (Toolbar)findViewById(R.id.main_toolbar);
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
+
+        productList = new ArrayList<>();
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        productList.add(
+                new Product(
+                        1,
+                        "boys shopping",
+                        "boys",
+                        4.3,
+                        60000,
+                        R.drawable.shop1));
+
+        productList.add(
+                new Product(
+                        1,
+                        "girls shopping",
+                        "girls",
+                        4.3,
+                        60000,
+                        R.drawable.shop2));
+
+        productList.add(
+                new Product(
+                        1,
+                        "electronic items",
+                        "electronics",
+                        4.3,
+                        60000,
+                        R.drawable.sale2));
+
 
         mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mdrawerLayout, R.string.open, R.string.close);
@@ -50,6 +102,26 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        CarouselView carouselView=findViewById(R.id.carousel);
+        carouselView.setPageCount(mimages.length);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(mimages[position]);
+            }
+        });
+        carouselView.setImageClickListener(new ImageClickListener() {
+            @Override
+            public void onClick(int position) {
+
+            }
+        });
+
+        //creating recyclerview adapter
+        ProductAdapter adapter = new ProductAdapter(this, productList);
+
+        //setting adapter to recyclerview
+        recyclerView.setAdapter(adapter);
 
     }
 
@@ -59,5 +131,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
+
+
     }
 }
