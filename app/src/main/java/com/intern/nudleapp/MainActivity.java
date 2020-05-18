@@ -9,27 +9,30 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     private DrawerLayout mdrawerLayout;
     private ActionBarDrawerToggle mToggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        navigationView = (NavigationView)findViewById(R.id.main_navbar);
-        Toolbar mtool = (Toolbar)findViewById(R.id.main_toolbar);
+
+        navigationView = (NavigationView) findViewById(R.id.main_navbar);
+        Toolbar mtool = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
 
-        mdrawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
-        mToggle = new ActionBarDrawerToggle(this, mdrawerLayout,R.string.open,R.string.close);
+        mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mToggle = new ActionBarDrawerToggle(this, mdrawerLayout, R.string.open, R.string.close);
         mdrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -38,11 +41,11 @@ public class MainActivity extends AppCompatActivity{
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int menu_id = item.getItemId();
-                switch (menu_id){
+                switch (menu_id) {
                     case R.id.menu_account:
                         item.setChecked(true);
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(MainActivity.this,ProfilePageActivity.class));
+                        startActivity(new Intent(MainActivity.this, ProfilePageActivity.class));
                 }
                 return true;
             }
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mToggle.onOptionsItemSelected(item)){
+        if (mToggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
