@@ -2,4 +2,9 @@
     <string name="app_name">NudleApp</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="todo">TODO</string>
+    <string name="boys_fashion">Boys fashion</string>
+    <string name="boys">13.3 Inch, 256 GB</string>
+    <string name="a">4.7</string>
+    <string name="ainr_56990">INR 56990</string>
 </resources>

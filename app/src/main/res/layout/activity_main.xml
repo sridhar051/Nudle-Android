@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,6 +12,9 @@
     <include
         android:id="@+id/main_toolbar"
         layout="@layout/toolbar" />
+
+
+
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carousel"
         android:layout_width="match_parent"
@@ -23,6 +27,20 @@
         app:slideInterval="3000"
         app:strokeColor="#FF777777"
         app:strokeWidth="1dp" />
+
+    <ScrollView
+        android:layout_below="@id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerview">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    </ScrollView>
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"
