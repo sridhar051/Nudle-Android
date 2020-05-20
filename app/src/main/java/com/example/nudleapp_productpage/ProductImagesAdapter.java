@@ -32,11 +32,13 @@ public class ProductImagesAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
+
         return productImages.size();
     }
 
     @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object)
+    {
         return view == object;
     }
 }
