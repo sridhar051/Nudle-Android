@@ -12,6 +12,10 @@
             android:id="@+id/menu_shop_by_cat"
             android:icon="@drawable/shop_by_cat"
             android:title="Shop by Category" />
+        <item
+            android:id="@+id/menu_cust_goods"
+            android:icon="@drawable/shop_by_cat"
+            android:title="Customized Goods" />
     </group>
 
     <group
@@ -42,6 +46,10 @@
             android:id="@+id/menu_rate"
             android:icon="@drawable/menu_rate"
             android:title="Rate Us" />
+        <item
+            android:id="@+id/menu_login"
+            android:icon="@drawable/default_user_black"
+            android:title="Login"/>
     </group>
 
 </menu>
