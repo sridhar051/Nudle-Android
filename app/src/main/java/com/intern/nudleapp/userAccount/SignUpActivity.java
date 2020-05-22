@@ -22,14 +22,15 @@ import retrofit2.Retrofit;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextInputLayout user_name, user_email, user_password, user_confirmed_password;
-    private String inputName, inputEmail, inputPassword, inputConfirmedPassword;
+    private TextInputLayout user_name, user_email, user_password, user_confirmed_password, user_mobile;
+    private String inputName, inputEmail, inputMobile, inputPassword, inputConfirmedPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        user_mobile = findViewById(R.id.user_mobile);
         user_email = findViewById(R.id.user_email_SignUp);
         user_name = findViewById(R.id.user_name_SignUp);
         user_password = findViewById(R.id.user_password_SignUp);
@@ -54,6 +55,17 @@ public class SignUpActivity extends AppCompatActivity {
             return false;
         } else {
             user_name.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateMobile() {
+        inputMobile = user_mobile.getEditText().getText().toString().trim();
+        if(inputMobile.isEmpty()) {
+            user_mobile.setError("!Please type your mobile number");
+            return false;
+        } else {
+            user_mobile.setError(null);
             return true;
         }
     }
@@ -84,7 +96,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void registerUser(View v) {
-        if(!validateName() | !validateEmail() | !validatePassword() | !validateConfirmPassword())
+        if(!validateName() | !validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
             return;
 
         // The following code is for registration into the database using retrofit
@@ -93,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
         /* Retrofit retrofit = APIClient.getRetrofitInstance();
         NudleServices nudleServices = retrofit.create(NudleServices.class);
 
-        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputPassword);
+        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
