@@ -26,9 +26,9 @@
             android:icon="@drawable/my_orders"
             android:title="My Orders" />
         <item
-            android:id="@+id/menu_wish_list"
+            android:id="@+id/menu_cart"
             android:icon="@drawable/my_wishlist"
-            android:title="My Wish List" />
+            android:title="My Cart" />
         <item
             android:id="@+id/menu_account"
             android:icon="@drawable/default_user_black"

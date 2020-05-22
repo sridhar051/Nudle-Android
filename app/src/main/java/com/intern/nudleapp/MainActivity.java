@@ -13,12 +13,16 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -98,6 +102,16 @@ public class MainActivity extends AppCompatActivity{
                         item.setChecked(true);
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, ProfilePageActivity.class));
+                        break;
+                    case R.id.menu_cart:
+                        FragmentManager fm = getSupportFragmentManager();
+                        MyCartFragment myCartFragment = new MyCartFragment();
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.main_conatiner, myCartFragment, "my-cart");
+                        transaction.addToBackStack(null);
+                        transaction.commit();
+                        break;
+
                 }
                 return true;
             }

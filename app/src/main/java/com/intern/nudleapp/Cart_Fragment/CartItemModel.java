@@ -1,18 +1,18 @@
-package com.intern.nudleapp.userAccount;
+package com.intern.nudleapp.Cart_Fragment;
 
 public class CartItemModel {
-    public static final int CART_ITEM=0;
-    public static final int TOTAL_AMT=1;
+//    public static final int CART_ITEM=0;
+//    public static final int TOTAL_AMT=1;
 
-    private int type;
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
+//    private int type;
+//
+//    public int getType() {
+//        return type;
+//    }
+//
+//    public void setType(int type) {
+//        this.type = type;
+//    }
 
     // cart item
     private int productImage;
@@ -22,8 +22,8 @@ public class CartItemModel {
     private String cuttedprice;
     private int productquantity,offersapplied,couponsapplied;
 
-    public CartItemModel(int type, int productImage, String productTitle, int freecoupons, String productprice, String cuttedprice, int productquantity, int offersapplied, int couponsapplied) {
-        this.type = type;
+    public CartItemModel(int productImage, String productTitle, int freecoupons, String productprice, String cuttedprice, int productquantity, int offersapplied, int couponsapplied) {
+//        this.type = type;
         this.productImage = productImage;
         this.productTitle = productTitle;
         this.freecoupons = freecoupons;
@@ -99,56 +99,56 @@ public class CartItemModel {
     }
     //cart item
     //cart total
-    private String  totalitems;
-    private String totalItemPrice,Deliveryprice,savedamount,totalamount;
-
-    public CartItemModel(int type, String totalitems, String totalItemPriceo, String deliveryprice,String totalamount, String savedamount) {
-        this.type = type;
-        this.totalitems = totalitems;
-        this.totalItemPrice = totalItemPrice;
-        Deliveryprice = deliveryprice;
-        this.savedamount = savedamount;
-        this.totalamount=totalamount;
-    }
-
-    public String getTotalamount() {
-        return totalamount;
-    }
-
-    public void setTotalamount(String totalamount) {
-        this.totalamount = totalamount;
-    }
-
-    public String getTotalitems() {
-        return totalitems;
-    }
-
-    public void setTotalitems(String totalitems) {
-        this.totalitems = totalitems;
-    }
-
-    public String getTotalItemPrice() {
-        return totalItemPrice;
-    }
-
-    public void setTotalItemPrice(String totalamt) {
-        this.totalItemPrice = totalamt;
-    }
-
-    public String getDeliveryprice() {
-        return Deliveryprice;
-    }
-
-    public void setDeliveryprice(String deliveryprice) {
-        Deliveryprice = deliveryprice;
-    }
-
-    public String getSavedamount() {
-        return savedamount;
-    }
-
-    public void setSavedamount(String savedamount) {
-        this.savedamount = savedamount;
-    }
+//    private String  totalitems;
+//    private String totalItemPrice,Deliveryprice,savedamount,totalamount;
+//
+//    public CartItemModel(int type, String totalitems, String totalItemPriceo, String deliveryprice,String totalamount, String savedamount) {
+//        this.type = type;
+//        this.totalitems = totalitems;
+//        this.totalItemPrice = totalItemPrice;
+//        Deliveryprice = deliveryprice;
+//        this.savedamount = savedamount;
+//        this.totalamount=totalamount;
+//    }
+//3
+//    public String getTotalamount() {
+//        return totalamount;
+//    }
+//
+//    public void setTotalamount(String totalamount) {
+//        this.totalamount = totalamount;
+//    }
+//
+//    public String getTotalitems() {
+//        return totalitems;
+//    }
+//
+//    public void setTotalitems(String totalitems) {
+//        this.totalitems = totalitems;
+//    }
+//
+//    public String getTotalItemPrice() {
+//        return totalItemPrice;
+//    }
+//
+//    public void setTotalItemPrice(String totalamt) {
+//        this.totalItemPrice = totalamt;
+//    }
+//
+//    public String getDeliveryprice() {
+//        return Deliveryprice;
+//    }
+//
+//    public void setDeliveryprice(String deliveryprice) {
+//        Deliveryprice = deliveryprice;
+//    }
+//
+//    public String getSavedamount() {
+//        return savedamount;
+//    }
+//
+//    public void setSavedamount(String savedamount) {
+//        this.savedamount = savedamount;
+//    }
 //cart total
 }

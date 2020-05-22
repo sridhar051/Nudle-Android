@@ -1,4 +1,4 @@
-package com.intern.nudleapp.userAccount;
+package com.intern.nudleapp.Cart_Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,61 +20,65 @@ public class CartAdapter extends RecyclerView.Adapter {
         this.cartitemmodellist = cartitemmodellist;
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        switch (cartitemmodellist.get(position).getType()){
-            case 0 :
-                return CartItemModel.CART_ITEM;
-            case 1:
-                return CartItemModel.TOTAL_AMT;
-            default:
-                return -1;
-        }
-    }
+//    @Override
+//    public int getItemViewType(int position) {
+//        switch (cartitemmodellist.get(position).getType()){
+//            case 0 :
+//                return CartItemModel.CART_ITEM;
+//            case 1:
+//                return CartItemModel.TOTAL_AMT;
+//            default:
+//                return -1;
+//        }
+//    }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        switch (viewType){
-            case CartItemModel.CART_ITEM:
-                View cartitemview= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cart_items_details,viewGroup,false);
-                return new CartItemViewHolder(cartitemview);
-
-
-                case CartItemModel.TOTAL_AMT:
-                    View carttotalview =LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cart_total_amount_layout,viewGroup,false);
-                    return new CartItemViewHolder(carttotalview);
-            default:
-                return null;
-        }
+//        switch (viewType){
+//            case CartItemModel.CART_ITEM:
+//                View cartitemview= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cart_items_details,viewGroup,false);
+//                return new CartItemViewHolder(cartitemview);
+//
+//
+//                case CartItemModel.TOTAL_AMT:
+//                    View carttotalview =LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cart_total_amount_layout,viewGroup,false);
+//                    return new CartItemViewHolder(carttotalview);
+//            default:
+//                return null;
+//        }
+        View cartitemview= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cart_items_details,viewGroup,false);
+        return new CartItemViewHolder(cartitemview);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        switch (cartitemmodellist.get(position).getType()){
-            case CartItemModel.CART_ITEM:
+
+
+//        switch (cartitemmodellist.get(position).getType()){
+//            case CartItemModel.CART_ITEM:
                 int resource = cartitemmodellist.get(position).getProductImage();
                 String title = cartitemmodellist.get(position).getProductTitle();
                 int freecoupons  = cartitemmodellist.get(position).getFreecoupons();
                 String ProductPrice = cartitemmodellist.get(position).getProductprice();
                 String cuttedprice = cartitemmodellist.get(position).getCuttedprice();
                 int offersapplied =  cartitemmodellist.get(position).getOffersapplied();
-
+//
                 ((CartItemViewHolder)holder).SetItemDetails(resource,title,freecoupons,ProductPrice,cuttedprice,offersapplied);
-                break;
-            case CartItemModel.TOTAL_AMT:
-                String totalitems = cartitemmodellist.get(position).getTotalitems();
-                String totalitemsprice = cartitemmodellist.get(position).getTotalItemPrice();
-                String deliveryprice = cartitemmodellist.get(position).getDeliveryprice();
-                String totalamount = cartitemmodellist.get(position).getTotalamount();
-                String savedamount = cartitemmodellist.get(position).getSavedamount();
-                ((carttotalamountviewholder)holder).SetTotalAmount(totalitems,totalitemsprice,deliveryprice,totalamount,savedamount);
-
-
-                break;
-            default:
-                return;
-        }
+//                break;
+//            case CartItemModel.TOTAL_AMT:
+//                String totalitems = cartitemmodellist.get(position).getTotalitems();
+//                String totalitemsprice = cartitemmodellist.get(position).getTotalItemPrice();
+//                String deliveryprice = cartitemmodellist.get(position).getDeliveryprice();
+//                String totalamount = cartitemmodellist.get(position).getTotalamount();
+//                String savedamount = cartitemmodellist.get(position).getSavedamount();
+//                ((carttotalamountviewholder)holder).SetTotalAmount(totalitems,totalitemsprice,deliveryprice,totalamount,savedamount);
+//
+//
+//                break;
+//            default:
+//                return;
+//        }
 
     }
 
@@ -92,7 +96,7 @@ public class CartAdapter extends RecyclerView.Adapter {
             super(itemView);
             productimage=itemView.findViewById(R.id.PRODUCT_IMAGE);
             freecoupon =itemView.findViewById(R.id.free_coupon_icon);
-            producttitle = itemView.findViewById(R.id.textView3);
+            producttitle = itemView.findViewById(R.id.product_title);
             freecoupons=itemView.findViewById(R.id.free_coupons_textview);
             productprice=itemView.findViewById(R.id.product_price);
             cuttoffprice=itemView.findViewById(R.id.cutoff_price);
@@ -128,35 +132,31 @@ public class CartAdapter extends RecyclerView.Adapter {
             else{
                 offersapplied.setVisibility(View.INVISIBLE);
             }
-
-
-
-
-
         }
     }
-    class  carttotalamountviewholder extends RecyclerView.ViewHolder {
-        private TextView totalitems,totalprice,deliveryprice,totalamount,savedamount;
+//    class  carttotalamountviewholder extends RecyclerView.ViewHolder {
+//
+//        private TextView totalitems,totalprice,deliveryprice,totalamount,savedamount;
+//
+//
+//
+//        public carttotalamountviewholder(@NonNull View itemView) {
+//            super(itemView);
+//            totalitems = itemView.findViewById(R.id.total_items_prices);
+//            totalprice = itemView.findViewById(R.id.total_items_price);
+//            deliveryprice = itemView.findViewById(R.id.delivery_charge);
+//            totalamount = itemView.findViewById(R.id.total_price);
+//            savedamount = itemView.findViewById(R.id.saved_amount);
+//        }
+//        private void SetTotalAmount(String totalitemtext,String totalitempricetext,String deliverypricetext, String totalamounttext,String savedamttext){
+//            totalitems.setText(totalitemtext);
+//            totalprice.setText(totalitempricetext);
+//            deliveryprice.setText(deliverypricetext);
+//            totalamount.setText(totalamounttext);
+//            savedamount.setText(savedamttext);
+//        }
 
 
 
-        public carttotalamountviewholder(@NonNull View itemView) {
-            super(itemView);
-            totalitems = itemView.findViewById(R.id.total_items_prices);
-            totalprice = itemView.findViewById(R.id.total_items_price);
-            deliveryprice = itemView.findViewById(R.id.delivery_charge);
-            totalamount = itemView.findViewById(R.id.total_price);
-            savedamount = itemView.findViewById(R.id.saved_amount);
-        }
-        private void SetTotalAmount(String totalitemtext,String totalitempricetext,String deliverypricetext, String totalamounttext,String savedamttext){
-            totalitems.setText(totalitemtext);
-            totalprice.setText(totalitempricetext);
-            deliveryprice.setText(deliverypricetext);
-            totalamount.setText(totalamounttext);
-            savedamount.setText(savedamttext);
-        }
-
-
-
-    }
+//    }
 }
