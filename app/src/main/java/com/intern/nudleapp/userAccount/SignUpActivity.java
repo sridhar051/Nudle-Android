@@ -10,13 +10,20 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
+import com.intern.nudleapp.APIClient;
+import com.intern.nudleapp.NudleServices;
 import com.intern.nudleapp.R;
+import com.intern.nudleapp.UserResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextInputLayout user_email, user_mobile, user_password, user_confirmed_password;
-    private String inputEmail, inputMobile, inputPassword, inputConfirmedPassword;
-    private FloatingActionButton back_button;
+    private TextInputLayout user_name, user_email, user_password, user_confirmed_password;
+    private String inputName, inputEmail, inputPassword, inputConfirmedPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         user_email = findViewById(R.id.user_email_SignUp);
-        user_mobile = findViewById(R.id.user_mobile_SignUp);
+        user_name = findViewById(R.id.user_name_SignUp);
         user_password = findViewById(R.id.user_password_SignUp);
         user_confirmed_password = findViewById(R.id.user_confirm_password_SignUp);
     }
@@ -40,13 +47,13 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    private boolean validateMobile() {
-        inputMobile = user_mobile.getEditText().getText().toString().trim();
-        if(inputMobile.isEmpty()) {
-            user_mobile.setError("!Please type your Mobile");
+    private boolean validateName() {
+        inputName = user_name.getEditText().getText().toString().trim();
+        if(inputName.isEmpty()) {
+            user_name.setError("!Please type your Name");
             return false;
         } else {
-            user_mobile.setError(null);
+            user_name.setError(null);
             return true;
         }
     }
@@ -77,12 +84,33 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void registerUser(View v) {
-        if(!validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
+        if(!validateName() | !validateEmail() | !validatePassword() | !validateConfirmPassword())
             return;
 
-        //Post User Details on the server to get him registered
+        // The following code is for registration into the database using retrofit
+        // Do not make any changes in it as of now
 
-        finish();
+        /* Retrofit retrofit = APIClient.getRetrofitInstance();
+        NudleServices nudleServices = retrofit.create(NudleServices.class);
+
+        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputPassword);
+        call.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                UserResponse mUserResponse = response.body();
+                if (mUserResponse.getCode() == 201) {
+                    Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SignUpActivity.this, "Some server issue. Please try again!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+
+            }
+        }); */
+
     }
 
     public void onBackPress(View v) {
