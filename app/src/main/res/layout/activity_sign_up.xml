@@ -81,6 +81,25 @@
                 android:padding="18dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/user_name_SignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true"
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPersonName"
+                        android:hint="Firstname Lastname"
+                        android:drawableStart="@drawable/ic_user"
+                        android:drawablePadding="10dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/user_email_SignUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,23 +113,6 @@
                         android:inputType="textEmailAddress"
                         android:hint="Email"
                         android:drawableStart="@drawable/ic_mail"
-                        android:drawablePadding="10dp"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/user_mobile_SignUp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true"
-                    android:layout_marginBottom="5dp"
-                    >
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="Mobile number"
-                        android:drawableStart="@drawable/ic_mobile"
                         android:drawablePadding="10dp"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
