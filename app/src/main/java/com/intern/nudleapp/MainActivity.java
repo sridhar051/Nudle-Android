@@ -1,36 +1,35 @@
 package com.intern.nudleapp;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.appcompat.widget.ToolbarWidgetWrapper;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageClickListener;
-import com.synnapps.carouselview.ImageListener;
-import java.util.ArrayList;
-import java.util.List;
-
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.widget.ImageView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
+import com.synnapps.carouselview.ImageListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ProductAdapter.OnProductListener {
 
     RecyclerView recyclerView;
     ProductAdapter adapter;
@@ -52,6 +51,12 @@ public class MainActivity extends AppCompatActivity{
         Toolbar mtool = (Toolbar)findViewById(R.id.main_toolbar);
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
+
+        loadFragment(new HomeFragment());
+
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+
 
         productList = new ArrayList<>();
 
@@ -132,12 +137,46 @@ public class MainActivity extends AppCompatActivity{
         });
 
         //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(this, productList);
+        ProductAdapter adapter = new ProductAdapter(this, productList,this);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
+
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+
+        switch (item.getItemId()) {
+            case R.id.navigation_home:
+                fragment = new HomeFragment();
+                break;
+
+            case R.id.navigation_dashboard:
+                fragment = new CategoryFragment();
+                break;
+
+            case R.id.navigation_notifications:
+                fragment = new NotificationFragment();
+                break;
+        }
+
+        return loadFragment(fragment);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_conatiner, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -145,8 +184,11 @@ public class MainActivity extends AppCompatActivity{
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
 
 
-
+    @Override
+    public void onProductClick() {
+        Log.i("checkstuff","Clicked");
     }
 }
