@@ -38,20 +38,30 @@
         app:strokeColor="#FF777777"
         app:strokeWidth="1dp" />
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/carousel"
-        android:fillViewport="true">
-
-        <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/recyclerview"
+        android:id="@+id/wrapper_scroll"
+        android:layout_below="@+id/carousel"
+        android:layout_above="@+id/navigation">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </ScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"
@@ -61,14 +71,16 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp">
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/main_navbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:backgroundTint="@color/default_user_icon_background"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/nav_menu" />
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/main_navbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:backgroundTint="@color/default_user_icon_background"
+                app:headerLayout="@layout/nav_header"
+                app:menu="@menu/nav_menu" />
+
     </androidx.drawerlayout.widget.DrawerLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
