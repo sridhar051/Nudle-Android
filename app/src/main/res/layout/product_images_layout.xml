@@ -67,7 +67,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
-                android:text="4.5"
+                android:text="4.0"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
