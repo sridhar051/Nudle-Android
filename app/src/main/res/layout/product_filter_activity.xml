@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main1">
+    tools:showIn="@layout/activity_main">
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
