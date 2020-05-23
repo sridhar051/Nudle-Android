@@ -14,10 +14,8 @@ import java.util.List;
 public class ProductImagesAdapter extends PagerAdapter {
 
     private List<Integer> productImages;
-    Context context;
     public ProductImagesAdapter(List<Integer> productImages){
         this.productImages = productImages;
-        this.context = context;
     }
 
     @NonNull
@@ -25,12 +23,6 @@ public class ProductImagesAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView productImage = new ImageView(container.getContext());
         productImage.setImageResource(productImages.get(position));
-        productImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                context.startActivity(new Intent(context,ProductDetailsActivity.class));
-            }
-        });
         container.addView(productImage,0);
         return productImage;
     }
