@@ -41,7 +41,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         List<Integer> productImages = new ArrayList<>();
 
-        com.intern.nudleapp.ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
+        ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
         productImagesViewPager.setAdapter(productImagesAdapter);
          viewpagerIndicator.setupWithViewPager(productImagesViewPager,true);
          addToWishListBtn.setOnClickListener(new View.OnClickListener(){
