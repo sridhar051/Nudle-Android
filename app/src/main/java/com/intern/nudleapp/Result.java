@@ -13,6 +13,12 @@ public class Result {
     @SerializedName("password")
     private String password;
 
+    @SerializedName("mobile")
+    private String mobile;
+
+    @SerializedName("session")
+    private int session;
+
     public String getName() {
         return name;
     }
@@ -35,5 +41,21 @@ public class Result {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public int getSession() {
+        return session;
+    }
+
+    public void setSession(int session) {
+        this.session = session;
     }
 }

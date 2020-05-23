@@ -16,7 +16,7 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="144dp"
         android:layout_marginBottom="588dp"
-        android:text="@string/category"
+        android:text="abcd"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
