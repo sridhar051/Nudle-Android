@@ -42,7 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validateEmail() {
         inputEmail = user_email.getEditText().getText().toString().trim();
         if(inputEmail.isEmpty()) {
-            user_email.setError("!Please type your Email");
+            user_email.setError("*  PLEASE TYPE IN YOUR EMAIL!!");
             return false;
         } else {
             user_email.setError(null);
@@ -53,7 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validateName() {
         inputName = user_name.getEditText().getText().toString().trim();
         if(inputName.isEmpty()) {
-            user_name.setError("!Please type your Name");
+            user_name.setError("*  PLEASE TYPE IN YOUR NAME!!");
             return false;
         } else {
             user_name.setError(null);
@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validateMobile() {
         inputMobile = user_mobile.getEditText().getText().toString().trim();
         if(inputMobile.isEmpty()) {
-            user_mobile.setError("!Please type your mobile number");
+            user_mobile.setError("*  PLEASE TYPE IN YOUR MOBILE NUMBER!!");
             return false;
         } else {
             user_mobile.setError(null);
@@ -75,7 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validatePassword() {
         inputPassword = user_password.getEditText().getText().toString().trim();
         if(inputPassword.isEmpty()) {
-            user_password.setError("!Please type your password");
+            user_password.setError("*  PLEASE TYPE IN YOUR MOBILE NUMBER!!");
             return false;
         } else {
             user_password.setError(null);
@@ -86,10 +86,10 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validateConfirmPassword() {
         inputConfirmedPassword = user_confirmed_password.getEditText().getText().toString().trim();
         if(inputConfirmedPassword.isEmpty()) {
-            user_confirmed_password.setError("!Please confirm your password");
+            user_confirmed_password.setError("*  PLEASE CONFIRM YOUR PASSWORD!!");
             return false;
         } else if (!inputConfirmedPassword.equals(inputPassword)) {
-            user_confirmed_password.setError("Password doesn't match!");
+            user_confirmed_password.setError("*  PASSWORD DOES NOT MATCH!!");
             return false;
         } else {
             user_confirmed_password.setError(null);
@@ -102,7 +102,6 @@ public class SignUpActivity extends AppCompatActivity {
             return;
 
         startActivity(new Intent(this, MainActivity.class));
-        finish();
 
         // The following code is for registration into the database using retrofit
         // Do not make any changes in it as of now
@@ -110,13 +109,15 @@ public class SignUpActivity extends AppCompatActivity {
        /* Retrofit retrofit = APIClient.getRetrofitInstance();
         NudleServices nudleServices = retrofit.create(NudleServices.class);
 
-        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword);
+        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword, 1);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 UserResponse mUserResponse = response.body();
                 if (mUserResponse.getCode() == 201) {
                     Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(SignUpActivity.this, "Some server issue. Please try again!", Toast.LENGTH_SHORT).show();
                 }
