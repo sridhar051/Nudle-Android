@@ -2,6 +2,7 @@ package com.intern.nudleapp.userAccount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,21 +11,30 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
+import com.intern.nudleapp.APIClient;
+import com.intern.nudleapp.MainActivity;
+import com.intern.nudleapp.NudleServices;
 import com.intern.nudleapp.R;
+import com.intern.nudleapp.UserResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextInputLayout user_email, user_mobile, user_password, user_confirmed_password;
-    private String inputEmail, inputMobile, inputPassword, inputConfirmedPassword;
-    private FloatingActionButton back_button;
+    private TextInputLayout user_name, user_email, user_password, user_confirmed_password, user_mobile;
+    private String inputName, inputEmail, inputMobile, inputPassword, inputConfirmedPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        user_mobile = findViewById(R.id.user_mobile);
         user_email = findViewById(R.id.user_email_SignUp);
-        user_mobile = findViewById(R.id.user_mobile_SignUp);
+        user_name = findViewById(R.id.user_name_SignUp);
         user_password = findViewById(R.id.user_password_SignUp);
         user_confirmed_password = findViewById(R.id.user_confirm_password_SignUp);
     }
@@ -40,10 +50,21 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    private boolean validateName() {
+        inputName = user_name.getEditText().getText().toString().trim();
+        if(inputName.isEmpty()) {
+            user_name.setError("!Please type your Name");
+            return false;
+        } else {
+            user_name.setError(null);
+            return true;
+        }
+    }
+
     private boolean validateMobile() {
         inputMobile = user_mobile.getEditText().getText().toString().trim();
         if(inputMobile.isEmpty()) {
-            user_mobile.setError("!Please type your Mobile");
+            user_mobile.setError("!Please type your mobile number");
             return false;
         } else {
             user_mobile.setError(null);
@@ -77,12 +98,36 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void registerUser(View v) {
-        if(!validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
+        if(!validateName() | !validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
             return;
 
-        //Post User Details on the server to get him registered
-
+        startActivity(new Intent(this, MainActivity.class));
         finish();
+
+        // The following code is for registration into the database using retrofit
+        // Do not make any changes in it as of now
+
+       /* Retrofit retrofit = APIClient.getRetrofitInstance();
+        NudleServices nudleServices = retrofit.create(NudleServices.class);
+
+        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword);
+        call.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                UserResponse mUserResponse = response.body();
+                if (mUserResponse.getCode() == 201) {
+                    Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SignUpActivity.this, "Some server issue. Please try again!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+
+            }
+        }); */
+
     }
 
     public void onBackPress(View v) {

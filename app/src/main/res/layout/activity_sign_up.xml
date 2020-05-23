@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
     android:orientation="vertical"
     tools:context=".userAccount.SignUpActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.255">
+        android:layout_weight="1.8">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/back_button"
@@ -40,36 +39,40 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="-35dp"
+            android:layout_marginEnd="0dp"
             android:src="@drawable/p1" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/img"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
-            android:text="Sign Up"
             android:fontFamily="sans-serif-smallcaps"
+            android:text="Sign Up"
             android:textColor="#000"
-            android:textSize="40sp"/>
+            android:textSize="40sp" />
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.645"
-        android:padding="20dp"
+        android:layout_weight="5"
         android:orientation="vertical"
         android:gravity="center">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             app:cardElevation="10dp"
             app:cardCornerRadius="20dp">
 
@@ -81,11 +84,28 @@
                 android:padding="18dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/user_name_SignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPersonName"
+                        android:hint="Firstname Lastname"
+                        android:drawableStart="@drawable/ic_user"
+                        android:drawablePadding="10dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/user_email_SignUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:errorEnabled="true"
-                    android:layout_marginBottom="5dp"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -99,17 +119,17 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/user_mobile_SignUp"
+                    android:id="@+id/user_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:errorEnabled="true"
-                    android:layout_marginBottom="5dp"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="Mobile number"
+                        android:inputType="text|phone"
+                        android:hint="Mobile"
                         android:drawableStart="@drawable/ic_mobile"
                         android:drawablePadding="10dp"/>
 
@@ -119,9 +139,8 @@
                     android:id="@+id/user_password_SignUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:errorEnabled="true"
                     app:passwordToggleEnabled="true"
-                    android:layout_marginBottom="5dp"
+                    app:errorEnabled="true"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -138,9 +157,9 @@
                     android:id="@+id/user_confirm_password_SignUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:errorEnabled="true"
                     app:passwordToggleEnabled="true"
-                    android:layout_marginBottom="5dp">
+                    app:errorEnabled="true"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -172,18 +191,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1">
+        android:layout_weight="0.5">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="-55dp"
-            android:src="@drawable/r1" />
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/r1" />
+
     </RelativeLayout>
 
 </LinearLayout>
