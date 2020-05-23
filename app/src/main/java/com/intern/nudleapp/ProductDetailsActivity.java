@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.intern.nudleapp.ProductImagesAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
@@ -41,7 +40,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         List<Integer> productImages = new ArrayList<>();
 
-        com.intern.nudleapp.ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
+        ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
         productImagesViewPager.setAdapter(productImagesAdapter);
 
          viewpagerIndicator.setupWithViewPager(productImagesViewPager,true);
