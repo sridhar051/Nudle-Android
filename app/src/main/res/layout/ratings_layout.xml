@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="4.5"
+            android:text="4.0"
             android:textColor="#000000"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -92,7 +92,7 @@
             android:layout_marginBottom="2dp"
             android:layout_weight="1"
             android:max="100"
-            android:progress="50"
+            android:progress="30"
             android:progressTint="#43D149" />
 
         <ProgressBar
@@ -104,7 +104,7 @@
             android:layout_marginBottom="2dp"
             android:layout_weight="1"
             android:max="100"
-            android:progress="50"
+            android:progress="65"
             android:progressTint="#43D149" />
 
         <ProgressBar
@@ -116,7 +116,7 @@
             android:layout_marginBottom="2dp"
             android:layout_weight="1"
             android:max="100"
-            android:progress="50"
+            android:progress="20"
             android:progressTint="#DFCB1E" />
 
         <ProgressBar
@@ -128,7 +128,7 @@
             android:layout_marginBottom="2dp"
             android:layout_weight="1"
             android:max="100"
-            android:progress="50"
+            android:progress="0"
             android:progressTint="#DFCB1E" />
 
         <ProgressBar
@@ -140,7 +140,7 @@
             android:layout_marginBottom="2dp"
             android:layout_weight="1"
             android:max="100"
-            android:progress="50"
+            android:progress="10"
             android:progressTint="#FF1201" />
     </LinearLayout>
 
@@ -299,7 +299,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="40"
+            android:text="15"
             android:textAlignment="center"
             android:textSize="12sp" />
 
@@ -308,7 +308,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="15"
+            android:text="40"
             android:textAlignment="center"
             android:textSize="12sp" />
 
@@ -391,7 +391,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:tint="#bebebe"
+            android:tint="#FFE501"
             app:srcCompat="@mipmap/star_black_foreground" />
 
         <ImageView
@@ -401,7 +401,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:tint="#bebebe"
+            android:tint="#FFE501"
             app:srcCompat="@mipmap/star_black_foreground" />
 
         <ImageView
@@ -411,7 +411,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:tint="#bebebe"
+            android:tint="#FFE501"
             app:srcCompat="@mipmap/star_black_foreground" />
 
         <ImageView
@@ -421,7 +421,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:tint="#bebebe"
+            android:tint="#FFE501"
+
             app:srcCompat="@mipmap/star_black_foreground" />
 
         <ImageView
