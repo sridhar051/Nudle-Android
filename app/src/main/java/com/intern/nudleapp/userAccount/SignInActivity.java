@@ -62,7 +62,7 @@ public class SignInActivity extends AppCompatActivity {
     private boolean validateEmail() {
         inputEmail = user_email.getEditText().getText().toString().trim();
         if(inputEmail.isEmpty()) {
-            user_email.setError("!Please type your Email");
+            user_email.setError("*  PLEASE TYPE YOUR EMAIL!!");
             return false;
         } else {
             user_email.setError(null);
@@ -73,7 +73,7 @@ public class SignInActivity extends AppCompatActivity {
     private boolean validatePassword() {
         inputPassword = user_password.getEditText().getText().toString().trim();
         if(inputPassword.isEmpty()) {
-            user_password.setError("!Please type your password");
+            user_password.setError("*  PLEASE TYPE YOUR PASSWORD!!");
             return false;
         } else {
             user_password.setError(null);
@@ -86,6 +86,7 @@ public class SignInActivity extends AppCompatActivity {
             return;
 
         startActivity(new Intent(SignInActivity.this, MainActivity.class));
+
 
         // The following code is for registration into the database using retrofit
         // Do not make any changes in it as of now
@@ -100,10 +101,15 @@ public class SignInActivity extends AppCompatActivity {
                 try {
                     UserResponse mUserResponse = response.body();
                     if(mUserResponse.getCode() == 200) {
-                        if(mUserResponse.getResult().getPassword().equals(inputPassword))
+                        if(mUserResponse.getResult().getSession() == 1)
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                        else
-                            user_password.setError("Incorrect password!");
+                        else {
+                            if(mUserResponse.getResult().getPassword().equals(inputPassword))
+                                startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                            else
+                                user_password.setError("Incorrect password!");
+                        }
+
                     } else {
                         Toast.makeText(SignInActivity.this, "Register yourself", Toast.LENGTH_SHORT).show();
                     }
