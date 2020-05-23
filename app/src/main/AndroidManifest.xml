@@ -17,6 +17,8 @@
 
         <activity android:name=".ProfilePageActivity"
             android:screenOrientation="nosensor"/>
+        <activity android:name=".FilterActivity"
+            android:screenOrientation="nosensor"/>
         <activity android:name=".userAccount.SignUpActivity"
             android:screenOrientation="nosensor"/>
         <activity android:name=".ProductDetailsActivity"></activity>

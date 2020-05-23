@@ -84,10 +84,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="20dp"
-                android:background="@android:color/darker_gray" />
+                android:layout_marginBottom="20dp"/>
 
             <TextView
                 android:id="@+id/textView_SignUp"
