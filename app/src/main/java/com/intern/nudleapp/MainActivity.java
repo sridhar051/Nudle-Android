@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ProductAdapter.OnProductListener {
+public class MainActivity extends AppCompatActivity implements  ProductAdapter.OnProductListener {
 
     RecyclerView recyclerView;
     ProductAdapter adapter;
@@ -47,15 +47,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        navigationView = (NavigationView)findViewById(R.id.main_navbar);
-        Toolbar mtool = (Toolbar)findViewById(R.id.main_toolbar);
+        navigationView = (NavigationView) findViewById(R.id.main_navbar);
+        Toolbar mtool = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
 
-        loadFragment(new HomeFragment());
+//        loadFragment(new HomeFragment());
 
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+//        BottomNavigationView navigation = findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
 
 
         productList = new ArrayList<>();
@@ -116,12 +116,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                         transaction.addToBackStack(null);
                         transaction.commit();
                         break;
+                    case R.id.menu_shop_by_cat:
+                        item.setChecked(true);
+//                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(MainActivity.this, ProductDetailsActivity.class));
+                        break;
 
                 }
                 return true;
             }
         });
-        CarouselView carouselView=findViewById(R.id.carousel);
+        CarouselView carouselView = findViewById(R.id.carousel);
         carouselView.setPageCount(mimages.length);
         carouselView.setImageListener(new ImageListener() {
             @Override
@@ -137,46 +142,46 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         });
 
         //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(this, productList,this);
+        ProductAdapter adapter = new ProductAdapter(this, productList, this);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
 
+//    }
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        Fragment fragment = null;
+//
+//        switch (item.getItemId()) {
+//            case R.id.navigation_home:
+//                fragment = new HomeFragment();
+//                break;
+//
+//            case R.id.navigation_dashboard:
+//                fragment = new CategoryFragment();
+//                break;
+//
+//            case R.id.navigation_notifications:
+//                fragment = new NotificationFragment();
+//                break;
+//        }
+//
+//        return loadFragment(fragment);
+//    }
+//
+//    private boolean loadFragment(Fragment fragment) {
+//        //switching fragment
+//        if (fragment != null) {
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.main_conatiner, fragment)
+//                    .commit();
+//            return true;
+//        }
+//        return false;
+//    }
     }
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment = null;
-
-        switch (item.getItemId()) {
-            case R.id.navigation_home:
-                fragment = new HomeFragment();
-                break;
-
-            case R.id.navigation_dashboard:
-                fragment = new CategoryFragment();
-                break;
-
-            case R.id.navigation_notifications:
-                fragment = new NotificationFragment();
-                break;
-        }
-
-        return loadFragment(fragment);
-    }
-
-    private boolean loadFragment(Fragment fragment) {
-        //switching fragment
-        if (fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_conatiner, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
