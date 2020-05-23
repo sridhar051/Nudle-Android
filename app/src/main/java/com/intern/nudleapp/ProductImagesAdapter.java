@@ -1,5 +1,7 @@
-package com.example.nudleapp_productpage;
+package com.intern.nudleapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,8 +14,10 @@ import java.util.List;
 public class ProductImagesAdapter extends PagerAdapter {
 
     private List<Integer> productImages;
-    public ProductImagesAdapter(List<Integer> productImages){
+    Context context;
+    public ProductImagesAdapter(List<Integer> productImages,Context context){
         this.productImages = productImages;
+        this.context = context;
     }
 
     @NonNull
@@ -21,6 +25,12 @@ public class ProductImagesAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView productImage = new ImageView(container.getContext());
         productImage.setImageResource(productImages.get(position));
+        productImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context,ProductDetailsActivity.class));
+            }
+        });
         container.addView(productImage,0);
         return productImage;
     }
