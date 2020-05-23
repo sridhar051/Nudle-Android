@@ -37,18 +37,29 @@ public class ProductSpecificationFragment extends Fragment {
 
         productSpecificationRecyclerView.setLayoutManager(linearLayoutManager);
         List<ProductSpecificationModel> productSpecificationModelList = new ArrayList<>();
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
-        productSpecificationModelList.add(new ProductSpecificationModel("Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(0,"General"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(0,"Another Type"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(0,"General"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(0,"Another Type"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+        productSpecificationModelList.add(new ProductSpecificationModel(1,"Product's Feature","its Value"));
+
 
         ProductSpecificationAdapter productSpecificationAdapter =  new ProductSpecificationAdapter(productSpecificationModelList);
         productSpecificationRecyclerView.setAdapter(productSpecificationAdapter);
