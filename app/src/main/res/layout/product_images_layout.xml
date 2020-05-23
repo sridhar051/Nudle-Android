@@ -25,16 +25,11 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
+                android:layout_height="?attr/actionBarSize">
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:elevation="3dp"
@@ -56,7 +51,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/viewpager_indicator"
+                android:id="@+id/viewpager_indicator1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:tabBackground="@drawable/dot_selector"
@@ -238,7 +233,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
