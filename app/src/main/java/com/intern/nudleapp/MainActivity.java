@@ -2,8 +2,10 @@ package com.intern.nudleapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -27,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ProductAdapter.OnProductListener {
 
     RecyclerView recyclerView;
     ProductAdapter adapter;
@@ -135,10 +137,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         });
 
         //creating recyclerview adapter
-        ProductAdapter adapter = new ProductAdapter(this, productList);
+        ProductAdapter adapter = new ProductAdapter(this, productList,this);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+
 
     }
     @Override
@@ -183,4 +186,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    public void onProductClick() {
+        Log.i("checkstuff","Clicked");
+    }
 }
