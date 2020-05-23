@@ -15,7 +15,7 @@ public class ProductImagesAdapter extends PagerAdapter {
 
     private List<Integer> productImages;
     Context context;
-    public ProductImagesAdapter(List<Integer> productImages,Context context){
+    public ProductImagesAdapter(List<Integer> productImages){
         this.productImages = productImages;
         this.context = context;
     }
