@@ -2,6 +2,7 @@ package com.intern.nudleapp.userAccount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.intern.nudleapp.APIClient;
+import com.intern.nudleapp.MainActivity;
 import com.intern.nudleapp.NudleServices;
 import com.intern.nudleapp.R;
 import com.intern.nudleapp.UserResponse;
@@ -99,10 +101,13 @@ public class SignUpActivity extends AppCompatActivity {
         if(!validateName() | !validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
             return;
 
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+
         // The following code is for registration into the database using retrofit
         // Do not make any changes in it as of now
 
-        /* Retrofit retrofit = APIClient.getRetrofitInstance();
+       /* Retrofit retrofit = APIClient.getRetrofitInstance();
         NudleServices nudleServices = retrofit.create(NudleServices.class);
 
         Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword);
