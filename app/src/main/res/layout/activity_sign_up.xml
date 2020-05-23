@@ -128,7 +128,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:inputType="phone"
+                        android:inputType="text|phone"
                         android:hint="Mobile"
                         android:drawableStart="@drawable/ic_mobile"
                         android:drawablePadding="10dp"/>
