@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toolbar;
 
-import com.example.nudleapp_productpage.ProductImagesAdapter;
+import com.intern.nudleapp.ProductImagesAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
@@ -41,7 +41,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         List<Integer> productImages = new ArrayList<>();
 
-        com.example.nudleapp_productpage.ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
+        com.intern.nudleapp.ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
         productImagesViewPager.setAdapter(productImagesAdapter);
          viewpagerIndicator.setupWithViewPager(productImagesViewPager,true);
          addToWishListBtn.setOnClickListener(new View.OnClickListener(){
