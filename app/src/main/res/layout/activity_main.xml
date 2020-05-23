@@ -75,7 +75,7 @@
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/main_navbar"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="start"
                 android:backgroundTint="@color/default_user_icon_background"
                 app:headerLayout="@layout/nav_header"
@@ -83,18 +83,18 @@
 
     </androidx.drawerlayout.widget.DrawerLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:id="@+id/navigation"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="#DC143C"
-        android:foregroundTint="@color/default_user_icon_background"
-        app:itemIconTint="#fff"
-        app:itemTextColor="#fff"
-        app:menu="@menu/navigation" />
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="62dp"-->
+<!--        android:id="@+id/navigation"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginBottom="0dp"-->
+<!--        android:background="#DC143C"-->
+<!--        android:foregroundTint="@color/default_user_icon_background"-->
+<!--        app:itemIconTint="#fff"-->
+<!--        app:itemTextColor="#fff"-->
+<!--        app:menu="@menu/navigation" />-->
 
 
 </RelativeLayout>
