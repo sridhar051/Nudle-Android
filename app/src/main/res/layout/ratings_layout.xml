@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:elevation="3dp"
-    android:background="#ffffff"
+    android:id="@+id/rate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Ratings"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="#ffffff"
+    android:elevation="3dp">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -37,16 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-        <TextView
-            android:id="@+id/average_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="4.0"
-            android:textColor="#000000"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
         <ImageView
             android:id="@+id/average_rating_star"
             android:layout_width="30dp"
@@ -56,21 +33,17 @@
 
             android:tint="#000000"
             app:srcCompat="@mipmap/star_black_foreground" />
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/total_ratings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="77 ratings"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        <TextView
+            android:id="@+id/average_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4.0"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ratings_progressbar_container"
@@ -341,14 +314,98 @@
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/divider4"
+    <LinearLayout
+        android:id="@+id/rate_now_container"
         android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="@+id/ratings_numbers_container"
-        app:layout_constraintStart_toStartOf="@+id/ratings_numbers_container"
-        app:layout_constraintTop_toBottomOf="@+id/ratings_numbers_container" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_your_ratings">
+
+        <ImageView
+            android:id="@+id/imageView101"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:tint="#bebebe"
+            app:srcCompat="@mipmap/star_black_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView102"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:tint="#bebebe"
+            app:srcCompat="@mipmap/star_black_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView103"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:tint="#bebebe"
+            app:srcCompat="@mipmap/star_black_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView104"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:tint="#bebebe"
+
+            app:srcCompat="@mipmap/star_black_foreground" />
+
+        <ImageView
+            android:id="@+id/imageView105"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:tint="#bebebe"
+            app:srcCompat="@mipmap/star_black_foreground" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Ratings"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/total_ratings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="77 ratings"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <TextView
         android:id="@+id/total_ratings_figure"
@@ -372,67 +429,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_ratings_figure" />
 
-    <LinearLayout
-        android:id="@+id/rate_now"
+    <View
+        android:id="@+id/divider4"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_your_ratings">
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:tint="#FFE501"
-            app:srcCompat="@mipmap/star_black_foreground" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:tint="#FFE501"
-            app:srcCompat="@mipmap/star_black_foreground" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:tint="#FFE501"
-            app:srcCompat="@mipmap/star_black_foreground" />
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:tint="#FFE501"
-
-            app:srcCompat="@mipmap/star_black_foreground" />
-
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:tint="#bebebe"
-            app:srcCompat="@mipmap/star_black_foreground" />
-    </LinearLayout>
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/ratings_numbers_container"
+        app:layout_constraintStart_toStartOf="@+id/ratings_numbers_container"
+        app:layout_constraintTop_toBottomOf="@+id/ratings_numbers_container" />
 </androidx.constraintlayout.widget.ConstraintLayout>
