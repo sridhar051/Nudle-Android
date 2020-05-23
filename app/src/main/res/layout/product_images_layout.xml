@@ -117,7 +117,6 @@
                     android:backgroundTint="@color/colorAccent"
                     android:src="@mipmap/star" />
 
-                .
             </LinearLayout>
 
             <TextView
