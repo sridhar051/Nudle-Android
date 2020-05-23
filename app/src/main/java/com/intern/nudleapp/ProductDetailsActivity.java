@@ -1,13 +1,13 @@
 package com.intern.nudleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toolbar;
 
 import com.intern.nudleapp.ProductImagesAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,8 +31,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        productImagesViewPager = findViewById(R.id.product_images_viewpager);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        productImagesViewPager = findViewById(R.id.viewPager);
         viewpagerIndicator = findViewById(R.id.viewpager_indicator);
         addToWishListBtn = findViewById(R.id.add_to_wish_list_button);
         productDetailsViewpager = findViewById(R.id.product_details_viewpager);
