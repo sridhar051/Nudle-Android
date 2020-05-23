@@ -6,10 +6,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class ProductDetailsAdapter extends FragmentPagerAdapter {
+    private FragmentManager fm;
     private int totalTabs;
     public ProductDetailsAdapter(FragmentManager fm,int totalTabs) {
         super(fm);
-        this.totalTabs = totalTabs;
+     this.totalTabs = totalTabs;
     }
 
     @Override
@@ -30,7 +31,8 @@ public class ProductDetailsAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() {
-        return 0;
+    public int getCount()
+    {
+        return totalTabs;
     }
 }

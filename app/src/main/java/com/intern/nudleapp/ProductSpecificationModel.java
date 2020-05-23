@@ -4,6 +4,10 @@ public class ProductSpecificationModel {
     private String featureName;
     private  String featureValue;
 
+    public ProductSpecificationModel(String featureName, String featureValue) {
+        this.featureName = featureName;
+        this.featureValue = featureValue;
+    }
     public void setFeatureName(String featureName) {
         this.featureName = featureName;
     }
@@ -18,10 +22,5 @@ public class ProductSpecificationModel {
 
     public String getFeatureName() {
         return featureName;
-    }
-
-    public ProductSpecificationModel(String featureName, String featureValue) {
-        this.featureName = featureName;
-        this.featureValue = featureValue;
     }
 }

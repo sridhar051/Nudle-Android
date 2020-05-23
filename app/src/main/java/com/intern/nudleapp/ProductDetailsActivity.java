@@ -43,6 +43,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         com.intern.nudleapp.ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
         productImagesViewPager.setAdapter(productImagesAdapter);
+
          viewpagerIndicator.setupWithViewPager(productImagesViewPager,true);
          addToWishListBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -63,7 +64,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
          });
 
         productDetailsViewpager.setAdapter(new ProductDetailsAdapter(getSupportFragmentManager(),productDetailsTablayout.getTabCount()));
-
         productDetailsViewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(productDetailsTablayout));
         productDetailsTablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
