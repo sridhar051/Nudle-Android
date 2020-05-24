@@ -1,4 +1,4 @@
-package com.intern.nudleapp.userAccount_fragment;
+package com.intern.nudleapp.userAccount;
 
 import android.content.Intent;
 import android.graphics.Paint;
