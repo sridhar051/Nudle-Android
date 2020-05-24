@@ -42,6 +42,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.Viewhold
     public int getItemCount() {
         return myOrderItemModelList.size();
     }
+
     class Viewholder extends RecyclerView.ViewHolder{
 
         private ImageView productImage;
@@ -54,7 +55,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.Viewhold
             super(itemView);
             productImage = itemView.findViewById(R.id.product_image);
             productTitle = itemView.findViewById(R.id.product_title);
-            orderIndicator = itemView.findViewById(R.id.delivery_charge);
+            orderIndicator = itemView.findViewById(R.id.order_indicator);
             deliveryStatus = itemView.findViewById(R.id.order_delivered_date);
             rateNowContainer = itemView.findViewById(R.id.rate_now_container);
 
@@ -63,7 +64,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.Viewhold
         private void setData(int resource,String title,String deliveryDate,int rating) {
             productImage.setImageResource(resource);
             productTitle.setText(title);
-            if (deliveryDate.equals("cancelled")) {
+            if (deliveryDate.equals("Cancelled")) {
                 orderIndicator.setImageTintList(ColorStateList.valueOf(itemView.getContext().getResources().getColor(R.color.colorPrimary)));
             } else {
                 orderIndicator.setImageTintList(ColorStateList.valueOf(itemView.getContext().getResources().getColor(R.color.successGreen)));

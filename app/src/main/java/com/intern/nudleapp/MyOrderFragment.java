@@ -38,6 +38,7 @@ public class MyOrderFragment extends Fragment {
         myOrderItemModelList.add(new MyOrderItemModel(R.id.PRODUCT_IMAGE,1,"Pixel 2XL (Black)","Delivered on Monday 25th May 2020"));
         myOrderItemModelList.add(new MyOrderItemModel(R.id.product_image,0,"Pixel 2XL (Black)","Cancelled"));
         myOrderItemModelList.add(new MyOrderItemModel(R.drawable.googlepixel3a,4,"Pixel 2XL (Black)","Delivered on Monday 25th May 2020"));
+
         MyOrderAdapter myOrderAdapter = new MyOrderAdapter(myOrderItemModelList);
         myOrdersRecyclerView.setAdapter(myOrderAdapter);
         myOrderAdapter.notifyDataSetChanged();
