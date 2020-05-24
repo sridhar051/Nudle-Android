@@ -1,4 +1,4 @@
-package com.intern.nudleapp.userAccount;
+package com.intern.nudleapp.userAccount_fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,22 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-import com.intern.nudleapp.APIClient;
 import com.intern.nudleapp.MainActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-import com.intern.nudleapp.NudleServices;
 import com.intern.nudleapp.R;
-import com.intern.nudleapp.UserResponse;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -31,7 +22,6 @@ public class SignInActivity extends AppCompatActivity {
 
     private TextInputLayout user_email, user_password;
     private String inputEmail, inputPassword;
-    private Button button_signIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +30,6 @@ public class SignInActivity extends AppCompatActivity {
 
         user_email = findViewById(R.id.user_email_SignIn);
         user_password = findViewById(R.id.user_password_SignIn);
-        button_signIn = findViewById(R.id.button_SignIn);
-
-        button_signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createSession();
-            }
-        });
 
         text_SignUp = findViewById(R.id.textView_SignUp);
         text_SignUp.setPaintFlags(text_SignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -81,7 +63,7 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
-    public void createSession() {
+    public void createSession(View view) {
         if(!validateEmail() | !validatePassword())
             return;
 
@@ -125,4 +107,9 @@ public class SignInActivity extends AppCompatActivity {
         }); */
 
     }
+
+    public void onBackPress(View view) {
+        onBackPressed();
+    }
+
 }
