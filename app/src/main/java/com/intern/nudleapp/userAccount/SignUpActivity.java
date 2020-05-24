@@ -1,4 +1,4 @@
-package com.intern.nudleapp.userAccount_fragment;
+package com.intern.nudleapp.userAccount;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -113,7 +113,6 @@ public class SignUpActivity extends AppCompatActivity {
                 UserResponse mUserResponse = response.body();
                 if (mUserResponse.getCode() == 201) {
                     Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     finish();
                 } else {
                     Toast.makeText(SignUpActivity.this, "Some server issue. Please try again!", Toast.LENGTH_SHORT).show();
