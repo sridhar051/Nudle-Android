@@ -28,7 +28,7 @@ public class SignInFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_sign_in, container, false);
+        View view = inflater.inflate(R.layout.fragment_sign_in, container, false);
 
         user_email = view.findViewById(R.id.user_email_SignIn);
         user_password = view.findViewById(R.id.user_password_SignIn);
