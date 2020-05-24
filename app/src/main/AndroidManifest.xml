@@ -21,10 +21,6 @@
             android:screenOrientation="nosensor"/>
         <activity android:name=".ProductDetailsActivity"/>
         <activity
-            android:name=".userAccount.SignInActivity"
-            android:screenOrientation="nosensor"
-            android:theme="@style/AppTheme"/>
-        <activity
             android:name=".MainActivity"
             android:screenOrientation="nosensor">
             <intent-filter>

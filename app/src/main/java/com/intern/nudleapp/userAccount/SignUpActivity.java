@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.intern.nudleapp.APIClient;
 import com.intern.nudleapp.MainActivity;
@@ -106,17 +103,16 @@ public class SignUpActivity extends AppCompatActivity {
         // The following code is for registration into the database using retrofit
         // Do not make any changes in it as of now
 
-       /* Retrofit retrofit = APIClient.getRetrofitInstance();
+        Retrofit retrofit = APIClient.getRetrofitInstance();
         NudleServices nudleServices = retrofit.create(NudleServices.class);
 
-        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword, 1);
+        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 UserResponse mUserResponse = response.body();
                 if (mUserResponse.getCode() == 201) {
                     Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     finish();
                 } else {
                     Toast.makeText(SignUpActivity.this, "Some server issue. Please try again!", Toast.LENGTH_SHORT).show();
@@ -127,7 +123,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onFailure(Call<UserResponse> call, Throwable t) {
 
             }
-        }); */
+        });
 
     }
 

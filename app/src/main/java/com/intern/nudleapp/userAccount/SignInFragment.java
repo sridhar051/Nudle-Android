@@ -1,31 +1,23 @@
 package com.intern.nudleapp.userAccount;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import com.intern.nudleapp.APIClient;
-import com.intern.nudleapp.MainActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputLayout;
-
-import com.intern.nudleapp.NudleServices;
+import com.intern.nudleapp.MainActivity;
 import com.intern.nudleapp.R;
-import com.intern.nudleapp.UserResponse;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-
-public class SignInActivity extends AppCompatActivity {
+public class SignInFragment extends Fragment {
 
     TextView text_SignUp;
 
@@ -33,15 +25,26 @@ public class SignInActivity extends AppCompatActivity {
     private String inputEmail, inputPassword;
     private Button button_signIn;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_sign_in, container, false);
 
-        user_email = findViewById(R.id.user_email_SignIn);
-        user_password = findViewById(R.id.user_password_SignIn);
-        button_signIn = findViewById(R.id.button_SignIn);
+        user_email = view.findViewById(R.id.user_email_SignIn);
+        user_password = view.findViewById(R.id.user_password_SignIn);
 
+
+        text_SignUp = view.findViewById(R.id.textView_SignUp);
+
+        text_SignUp.setPaintFlags(text_SignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        text_SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), SignUpActivity.class));
+            }
+        });
+
+        button_signIn = view.findViewById(R.id.button_SignIn);
         button_signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,43 +52,14 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        text_SignUp = findViewById(R.id.textView_SignUp);
-        text_SignUp.setPaintFlags(text_SignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        text_SignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
-            }
-        });
+        return view;
     }
 
-    private boolean validateEmail() {
-        inputEmail = user_email.getEditText().getText().toString().trim();
-        if(inputEmail.isEmpty()) {
-            user_email.setError("*  PLEASE TYPE YOUR EMAIL!!");
-            return false;
-        } else {
-            user_email.setError(null);
-            return true;
-        }
-    }
-
-    private boolean validatePassword() {
-        inputPassword = user_password.getEditText().getText().toString().trim();
-        if(inputPassword.isEmpty()) {
-            user_password.setError("*  PLEASE TYPE YOUR PASSWORD!!");
-            return false;
-        } else {
-            user_password.setError(null);
-            return true;
-        }
-    }
-
-    public void createSession() {
+    private void createSession() {
         if(!validateEmail() | !validatePassword())
             return;
 
-        startActivity(new Intent(SignInActivity.this, MainActivity.class));
+        startActivity(new Intent(getContext(), MainActivity.class));
 
 
         // The following code is for registration into the database using retrofit
@@ -123,6 +97,27 @@ public class SignInActivity extends AppCompatActivity {
                 Toast.makeText(SignInActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }); */
+    }
 
+    private boolean validateEmail() {
+        inputEmail = user_email.getEditText().getText().toString().trim();
+        if(inputEmail.isEmpty()) {
+            user_email.setError("*  PLEASE TYPE YOUR EMAIL!!");
+            return false;
+        } else {
+            user_email.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validatePassword() {
+        inputPassword = user_password.getEditText().getText().toString().trim();
+        if(inputPassword.isEmpty()) {
+            user_password.setError("*  PLEASE TYPE YOUR PASSWORD!!");
+            return false;
+        } else {
+            user_password.setError(null);
+            return true;
+        }
     }
 }
