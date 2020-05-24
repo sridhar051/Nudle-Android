@@ -106,10 +106,10 @@ public class SignUpActivity extends AppCompatActivity {
         // The following code is for registration into the database using retrofit
         // Do not make any changes in it as of now
 
-       /* Retrofit retrofit = APIClient.getRetrofitInstance();
+        Retrofit retrofit = APIClient.getRetrofitInstance();
         NudleServices nudleServices = retrofit.create(NudleServices.class);
 
-        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword, 1);
+        Call<UserResponse> call = nudleServices.postUserDetails(inputName, inputEmail, inputMobile, inputPassword);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
@@ -127,7 +127,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onFailure(Call<UserResponse> call, Throwable t) {
 
             }
-        }); */
+        });
 
     }
 

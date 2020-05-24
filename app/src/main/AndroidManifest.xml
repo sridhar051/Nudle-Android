@@ -17,13 +17,14 @@
 
         <activity android:name=".ProfilePageActivity"
             android:screenOrientation="nosensor"/>
-        <activity android:name=".userAccount.SignUpActivity"
+        <activity android:name=".userAccount_fragment.SignUpActivity"
             android:screenOrientation="nosensor"/>
         <activity android:name=".ProductDetailsActivity"/>
         <activity
-            android:name=".userAccount.SignInActivity"
+            android:name=".userAccount_fragment.SignInActivity"
             android:screenOrientation="nosensor"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="nosensor">

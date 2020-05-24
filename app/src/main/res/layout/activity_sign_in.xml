@@ -6,10 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center"
     android:background="@drawable/nudle_bg"
-    tools:context=".userAccount.SignInActivity">
+    tools:context=".userAccount_fragment.SignInActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#fff"
+        android:src="@drawable/back_profile" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -23,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="50dp"
         app:cardElevation="10dp"
         app:cardCornerRadius="20dp">
 
@@ -31,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="20dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/user_email_SignIn"
@@ -77,7 +81,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_button_sign_in"
                 android:text="SIGN IN"/>
 
@@ -87,7 +91,7 @@
                 android:background="?android:attr/listDivider"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/textView_SignUp"
