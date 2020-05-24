@@ -9,18 +9,10 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <include layout="@layout/toolbar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/toolbar"/>
-
     <ScrollView
         android:id="@+id/scrollview_cart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/toolbar"
         android:layout_alignParentRight="true"
