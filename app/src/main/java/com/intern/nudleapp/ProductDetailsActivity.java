@@ -8,8 +8,9 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
-import com.intern.nudleapp.ProductImagesAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,6 +24,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ViewPager productDetailsViewpager;
     private TabLayout productDetailsTablayout;
 
+    //////rating layout
+    private LinearLayout rateNowContainer;
+    //////rating layout
     private static boolean ALREADY_ADDED_TO_WISHLIST = false;
     private FloatingActionButton addToWishListBtn;
 
@@ -40,8 +44,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
 
         List<Integer> productImages = new ArrayList<>();
+        //TODO add images into the list for the product details activity
 
-        com.intern.nudleapp.ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
+        ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);
         productImagesViewPager.setAdapter(productImagesAdapter);
          viewpagerIndicator.setupWithViewPager(productImagesViewPager,true);
          addToWishListBtn.setOnClickListener(new View.OnClickListener(){
@@ -81,5 +86,28 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             }
         });
+
+        ////////rating layout
+        rateNowContainer = findViewById(R.id.rate_now_container);
+        for ( int x=0;x < rateNowContainer.getChildCount();x++){
+            final int starPosition = x;
+            rateNowContainer.getChildAt(x).setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+                    setRating(starPosition);
+                }
+            });
+        }
+        ////////rating layput
+    }
+
+    private void setRating(int starPosition) {
+        for(int x = 0; x < rateNowContainer.getChildCount(); x++){
+            ImageView starBtn = (ImageView)rateNowContainer.getChildAt(x);
+            starBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#bebebe")));
+            if(x <= starPosition){
+                starBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffbb00")));
+            }
+        }
     }
 }
