@@ -5,22 +5,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
+import com.intern.nudleapp.userAccount_fragment.SignInActivity;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
@@ -29,17 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements  ProductAdapter.OnProductListener {
+public class MainActivity extends AppCompatActivity implements ProductAdapter.OnProductListener {
 
     RecyclerView recyclerView;
     ProductAdapter adapter;
     List<Product> productList;
 
     NavigationView navigationView;
-    private DrawerLayout mdrawerLayout;
+    private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private int[] mimages=new int[]{
-            R.drawable.sale1,R.drawable.sale2,R.drawable.sale3
+    private int[] mimages = new int[]{
+            R.drawable.sale1, R.drawable.sale2, R.drawable.sale3
     };
 
     @Override
@@ -92,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements  ProductAdapter.O
                         R.drawable.sale2));
 
 
-        mdrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        mToggle = new ActionBarDrawerToggle(this, mdrawerLayout, R.string.open, R.string.close);
-        mdrawerLayout.addDrawerListener(mToggle);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -121,8 +120,14 @@ public class MainActivity extends AppCompatActivity implements  ProductAdapter.O
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, ProductDetailsActivity.class));
                         break;
+                    case R.id.menu_login:
+                        item.setChecked(true);
+                        startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                        break;
+
 
                 }
+                mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
@@ -194,6 +199,6 @@ public class MainActivity extends AppCompatActivity implements  ProductAdapter.O
 
     @Override
     public void onProductClick() {
-        Log.i("checkstuff","Clicked");
+        Log.i("checkstuff", "Clicked");
     }
 }
