@@ -76,14 +76,14 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, ProfilePageActivity.class));
                         break;
-                    case R.id.menu_cart:
+                    /*case R.id.menu_cart:
                         FragmentManager fm = getSupportFragmentManager();
                         MyCartFragment myCartFragment = new MyCartFragment();
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.fragment_container, myCartFragment, "my-cart");
                         transaction.addToBackStack(null);
                         transaction.commit();
-                        break;
+                        break;*/
                     //case R.id.menu_shop_by_cat:
                     //    item.setChecked(true);
 //                  //      Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
