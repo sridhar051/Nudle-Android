@@ -94,6 +94,11 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new SignInFragment()).commit();
                         break;
+                    case R.id.menu_orders:
+                        item.setChecked(true);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new MyOrderFragment()).commit();
+                        break;
                 }
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
