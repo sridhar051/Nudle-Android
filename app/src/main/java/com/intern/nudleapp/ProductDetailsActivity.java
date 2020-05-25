@@ -44,6 +44,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
 
         List<Integer> productImages = new ArrayList<>();
+        productImages.add(R.drawable.shop1);
+        productImages.add(R.drawable.shop2);
+        productImages.add(R.drawable.shop3);
+        productImages.add(R.drawable.happy_shopping);
         //TODO add images into the list for the product details activity
 
         ProductImagesAdapter productImagesAdapter = new ProductImagesAdapter(productImages);

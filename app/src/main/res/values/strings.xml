@@ -7,4 +7,7 @@
     <string name="boys">13.3 Inch, 256 GB</string>
     <string name="a">4.7</string>
     <string name="ainr_56990">INR 56990</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

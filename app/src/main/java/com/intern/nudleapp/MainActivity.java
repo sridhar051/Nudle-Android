@@ -81,18 +81,16 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         transaction.addToBackStack(null);
                         transaction.commit();
                         break;
-                    case R.id.menu_shop_by_cat:
-                        item.setChecked(true);
-//                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(MainActivity.this, ProductDetailsActivity.class));
-                        break;
+                    //case R.id.menu_shop_by_cat:
+                    //    item.setChecked(true);
+//                  //      Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
+                    //    startActivity(new Intent(MainActivity.this, ProductDetailsActivity.class));
+                    //    break;
                     case R.id.menu_login:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new SignInFragment()).commit();
                         break;
-
-
                 }
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
