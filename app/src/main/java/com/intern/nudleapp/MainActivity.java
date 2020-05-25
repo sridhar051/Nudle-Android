@@ -11,15 +11,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
 import com.intern.nudleapp.userAccount.SignInFragment;
 
 
-public class MainActivity extends AppCompatActivity implements ProductAdapter.OnProductListener {
+public class MainActivity extends AppCompatActivity implements ProductAdapter.OnProductListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
@@ -35,13 +37,14 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
 
-//        loadFragment(new HomeFragment());
+        loadFragment(new Fragment());
 
-//        BottomNavigationView navigation = findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
 
 
-       // The code for carousel view etc. is shifted to the class HomeFragment
+
+        // The code for carousel view etc. is shifted to the class HomeFragment
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -97,40 +100,40 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
             }
         });
 
-//    }
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        Fragment fragment = null;
-//
-//        switch (item.getItemId()) {
-//            case R.id.navigation_home:
-//                fragment = new HomeFragment();
-//                break;
-//
-//            case R.id.navigation_dashboard:
-//                fragment = new CategoryFragment();
-//                break;
-//
-//            case R.id.navigation_notifications:
-//                fragment = new NotificationFragment();
-//                break;
-//        }
-//
-//        return loadFragment(fragment);
-//    }
-//
-//    private boolean loadFragment(Fragment fragment) {
-//        //switching fragment
-//        if (fragment != null) {
-//            getSupportFragmentManager()
-//                    .beginTransaction()
-//                    .replace(R.id.main_conatiner, fragment)
-//                    .commit();
-//            return true;
-//        }
-//        return false;
-//    }
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+
+        switch (item.getItemId()) {
+            case R.id.navigation_home:
+                fragment = new Fragment();
+                break;
+
+            case R.id.navigation_dashboard:
+                fragment = new CategoryFragment();
+                break;
+
+            case R.id.navigation_notifications:
+                fragment = new NotificationFragment();
+                break;
+        }
+
+        return loadFragment(fragment);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -154,5 +157,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
     public void onProductClick() {
         Log.i("checkstuff", "Clicked");
     }
+
+
 
 }
