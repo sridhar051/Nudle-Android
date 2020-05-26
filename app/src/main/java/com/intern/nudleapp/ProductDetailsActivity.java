@@ -35,7 +35,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+
+
         productImagesViewPager = findViewById(R.id.viewPager);
         viewpagerIndicator = findViewById(R.id.viewpager_indicator);
         addToWishListBtn = findViewById(R.id.add_to_wish_list_button);
