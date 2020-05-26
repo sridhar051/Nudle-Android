@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,6 +28,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ViewPager productDetailsViewpager;
     private TabLayout productDetailsTablayout;
 
+
+
     //////rating layout
     private LinearLayout rateNowContainer;
     //////rating layout
@@ -35,7 +41,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
-
+        Toolbar mtool = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mtool);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         productImagesViewPager = findViewById(R.id.viewPager);
         viewpagerIndicator = findViewById(R.id.viewpager_indicator);
@@ -104,6 +113,26 @@ public class ProductDetailsActivity extends AppCompatActivity {
             });
         }
         ////////rating layput
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_and_cart, menu);
+        return true;
+    }
+    public boolean OnOptionsItemSlected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home){
+
+            return true;
+        }
+        if(id == R.id.main_search_icon){
+            //TODO search icon
+            return true;
+        }
+        if(id == R.id.main_cart_icon){
+            startActivity(new Intent(this, MyOrderFragment.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setRating(int starPosition) {

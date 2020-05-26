@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new HomeFragment()).commit();
                         break;
-                    case R.id.menu_account:
+                    case R.id.menu_profile:
                         item.setChecked(true);
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, ProfilePageActivity.class));

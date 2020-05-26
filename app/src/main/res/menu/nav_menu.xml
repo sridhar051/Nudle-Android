@@ -38,6 +38,10 @@
             android:icon="@drawable/default_user_black"
             android:title="My Account" />
         <item
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/default_user_black"
+            android:title="Profile" />
+        <item
             android:id="@+id/menu_settings"
             android:icon="@drawable/menu_settings"
             android:title="Settings" />
