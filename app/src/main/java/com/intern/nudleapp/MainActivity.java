@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
 
-        loadFragment(new Fragment());
+        loadFragment(new HomeFragment());
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
 
         switch (item.getItemId()) {
             case R.id.navigation_home:
-                fragment = new Fragment();
+                fragment = new HomeFragment();
                 break;
 
             case R.id.navigation_dashboard:
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_container, fragment)
+                    .replace(R.id.fragment_container, fragment)
                     .commit();
             return true;
         }
