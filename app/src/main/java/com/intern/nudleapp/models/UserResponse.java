@@ -1,4 +1,4 @@
-package com.intern.nudleapp;
+package com.intern.nudleapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,9 +13,6 @@ public class UserResponse {
     @SerializedName("result")
     private Result result;
 
-    @SerializedName("message")
-    private Message message;
-
     public int getStatus() {
         return status;
     }
@@ -26,21 +23,6 @@ public class UserResponse {
 
     public Result getResult() {
         return result;
-    }
-
-    public Message getMessage() {
-        return message;
-    }
-
-    public static class Message {
-
-        @SerializedName("content")
-        private String content;
-
-        public String getContent() {
-            return content;
-        }
-
     }
 
 }
