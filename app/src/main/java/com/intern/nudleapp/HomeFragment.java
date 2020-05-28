@@ -100,8 +100,6 @@ public class HomeFragment extends Fragment{
 
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(getContext(), productList, (ProductAdapter.OnProductListener) getContext());
-
-
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
 
