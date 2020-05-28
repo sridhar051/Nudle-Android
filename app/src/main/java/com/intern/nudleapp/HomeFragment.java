@@ -61,6 +61,7 @@ public class HomeFragment extends Fragment{
                         60000,
                         R.drawable.shop2));
 
+
         productList.add(
                 new Product(
                         1,
