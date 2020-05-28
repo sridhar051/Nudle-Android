@@ -1,4 +1,4 @@
-package com.intern.nudleapp;
+package com.intern.nudleapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
