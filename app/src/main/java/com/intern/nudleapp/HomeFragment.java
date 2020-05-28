@@ -87,6 +87,22 @@ public class HomeFragment extends Fragment{
             }
         });
 
+        // carousel view for discount
+        CarouselView carouselView1 = view.findViewById(R.id.carousel1);
+        carouselView1.setPageCount(mimages.length);
+        carouselView1.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(mimages[position]);
+            }
+        });
+        carouselView1.setImageClickListener(new ImageClickListener() {
+            @Override
+            public void onClick(int position) {
+
+            }
+        });
+
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(getContext(), productList, (ProductAdapter.OnProductListener) getContext());
 
