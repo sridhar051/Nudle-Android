@@ -8,10 +8,7 @@
             android:id="@+id/menu_home"
             android:icon="@drawable/home_custom"
             android:title="Home" />
-        <item
-            android:id="@+id/menu_shop_by_cat"
-            android:icon="@drawable/shop_by_cat"
-            android:title="Shop by Category" />
+
         <item
             android:id="@+id/menu_cust_goods"
             android:icon="@drawable/shop_by_cat"
@@ -25,23 +22,35 @@
             android:id="@+id/menu_orders"
             android:icon="@drawable/my_orders"
             android:title="My Orders" />
-        <item
+
+      <!--  *  -->
+
+       <!-- we will add cart and search bar in the bottom or top nav bar -->
+
+      <!--  *  -->
+
+       <!-- <item
             android:id="@+id/menu_cart"
             android:icon="@drawable/my_wishlist"
-            android:title="My Cart" />
+            android:title="My Cart" />-->
         <item
             android:id="@+id/menu_account"
             android:icon="@drawable/default_user_black"
             android:title="My Account" />
+        <item
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/default_user_black"
+            android:title="Profile" />
+        <item
+            android:id="@+id/menu_settings"
+            android:icon="@drawable/menu_settings"
+            android:title="Settings" />
     </group>
 
     <group
         android:id="@+id/menu_dev_func"
         android:checkableBehavior="single">
-        <item
-            android:id="@+id/menu_settings"
-            android:icon="@drawable/menu_settings"
-            android:title="Settings" />
+
         <item
             android:id="@+id/menu_rate"
             android:icon="@drawable/menu_rate"
@@ -50,6 +59,10 @@
             android:id="@+id/menu_login"
             android:icon="@drawable/default_user_black"
             android:title="Login"/>
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/logout" />
     </group>
 
 </menu>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimary">#FA0101</color>
     <color name="colorPrimaryDark">#DC143C</color>
-    <color name="colorAccent">#ED0A0A</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="successGreen">#11A10C</color>
+    <color name="RecyclerViewBackground">#d6d6d6</color>
+    <color name="splash">#ff8080</color>
+    <color name="white">#fff</color>
+    <color name="orange">#ff5c33</color>
 </resources>
