@@ -61,7 +61,6 @@ public class HomeFragment extends Fragment{
                         60000,
                         R.drawable.shop2));
 
-
         productList.add(
                 new Product(
                         1,
@@ -81,22 +80,6 @@ public class HomeFragment extends Fragment{
             }
         });
         carouselView.setImageClickListener(new ImageClickListener() {
-            @Override
-            public void onClick(int position) {
-
-            }
-        });
-
-        // carousel view for discount
-        CarouselView carouselView1 = view.findViewById(R.id.carousel1);
-        carouselView1.setPageCount(mimages.length);
-        carouselView1.setImageListener(new ImageListener() {
-            @Override
-            public void setImageForPosition(int position, ImageView imageView) {
-                imageView.setImageResource(mimages[position]);
-            }
-        });
-        carouselView1.setImageClickListener(new ImageClickListener() {
             @Override
             public void onClick(int position) {
 

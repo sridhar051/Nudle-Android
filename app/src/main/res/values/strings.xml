@@ -15,4 +15,9 @@
     <string name="logout">Logout</string>
     <string name="categories">TextView</string>
     <string name="nudle">NUDLE</string>
+    <string name="brand1">brand1</string>
+    <string name="brand2">brand2</string>
+    <string name="brand3">brand3</string>
+    <string name="explore_by_brands">Explore by Brands</string>
+    <string name="explore_brands">EXPLORE BRANDS</string>
 </resources>

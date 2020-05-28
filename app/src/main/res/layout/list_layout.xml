@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:id="@+id/list_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="220dp"
             android:layout_margin="5dp">
 
 
@@ -24,33 +24,42 @@
                 android:id="@+id/list_layout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="2dp">
+                android:background="#8AA39999"
+                android:padding="1dp">
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:scaleType="fitCenter"
-                    android:adjustViewBounds="true"
                     android:contentDescription="@string/todo"
-                     />
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:padding="2dp"/>
 
                 <TextView
                     android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="230dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#2E8FD8"
+                    android:backgroundTintMode="src_over"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="5dp"
                     android:text="@string/boys_fashion"
-                    android:textColor="#000000"
-                    android:layout_height="0dp"
-                    android:layout_width="0dp" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/textViewShortDesc"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_alignParentBottom="true"
-                    android:text="@string/boys"/>
+                    android:text="@string/boys" />
 
                 <TextView
                     android:id="@+id/textViewRating"
