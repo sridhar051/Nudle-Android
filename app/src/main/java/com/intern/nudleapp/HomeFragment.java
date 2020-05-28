@@ -39,36 +39,46 @@ public class HomeFragment extends Fragment{
 
         productList = new ArrayList<>();
 
+
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         productList.add(
                 new Product(
                         1,
-                        "boys shopping",
+                        "SHOP NOW",
                         "boys",
                         4.3,
                         60000,
-                        R.drawable.shop1));
+                        R.drawable.h5));
 
         productList.add(
                 new Product(
                         1,
-                        "girls shopping",
+                        "SHOP NOW",
                         "girls",
                         4.3,
                         60000,
-                        R.drawable.shop2));
+                        R.drawable.h2));
 
         productList.add(
                 new Product(
                         1,
-                        "electronic items",
+                        "SHOP NOW",
                         "electronics",
                         4.3,
                         60000,
-                        R.drawable.sale2));
+                        R.drawable.h3));
+        productList.add(
+                new Product(
+                        1,
+                        "SHOP NOW",
+                        "sale",
+                        4.3,
+                        60000,
+                        R.drawable.h4));
 
 
         CarouselView carouselView = view.findViewById(R.id.carousel);
@@ -86,13 +96,14 @@ public class HomeFragment extends Fragment{
             }
         });
 
+
+
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(getContext(), productList, (ProductAdapter.OnProductListener) getContext());
 
+
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
-
-
 
 
         return view;
