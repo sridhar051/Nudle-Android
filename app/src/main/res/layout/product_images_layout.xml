@@ -43,7 +43,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
-                android:text="@string/_4_0"
+                android:text="4.0"
                 android:background="@color/successGreen"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
@@ -149,7 +149,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cod_indicator_imageview" />
 
         <View
-            android:id="@+id/divider"
+            android:id="@+id/price_cut"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="#80000000"
