@@ -1,5 +1,6 @@
 package com.intern.nudleapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -32,8 +33,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
         return true;
     }
 
-    public boolean OnOptionsItemSlected(MenuItem item){
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home){
             finish();
             // todo have a doubt on this its not giving action
@@ -44,7 +45,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
             return true;
         }
         if(item.getItemId() == R.id.main_cart_icon){
-           //TODO cart Action
+            //TODO cart Action
             return true;
         }
         return super.onOptionsItemSelected(item);
