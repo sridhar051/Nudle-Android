@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="#6AFF00"
+            android:background="@color/successGreen"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_title">
@@ -43,18 +43,20 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
-                android:text="4.0"
+                android:text="@string/_4_0"
+                android:background="@color/successGreen"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
             <ImageView
-                android:layout_width="15dp"
+                android:layout_width="19dp"
                 android:layout_height="19dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
-                android:backgroundTint="@color/colorAccent"
-                android:src="@mipmap/star_black_foreground" />
+                android:background="@color/successGreen"
+                android:src="@mipmap/star_black_foreground"
+                android:tint="@color/colorAccent" />
 
         </LinearLayout>
 
