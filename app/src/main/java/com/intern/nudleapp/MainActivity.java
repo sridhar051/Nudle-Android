@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
 
 
-
         // The code for carousel view etc. is shifted to the class HomeFragment
 
 
@@ -52,8 +51,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if(savedInstanceState == null)
-        {
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.menu_home);
@@ -62,11 +60,8 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
                 int menu_id = item.getItemId();
                 switch (menu_id) {
-
                     case R.id.menu_home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new HomeFragment()).commit();
@@ -75,6 +70,15 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         item.setChecked(true);
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, ProfilePageActivity.class));
+                        break;
+                    case R.id.menu_share:
+                        final String appPackageName = "NudleApp";
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT,
+                                "** Playstore link ** " + appPackageName);
+                        sendIntent.setType("text/plain");
+                        startActivity(sendIntent);
                         break;
                     /*case R.id.menu_cart:
                         FragmentManager fm = getSupportFragmentManager();
@@ -106,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         });
 
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
@@ -142,10 +147,9 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
 
     @Override
     public void onBackPressed() {
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }
@@ -162,7 +166,6 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
     public void onProductClick() {
         Log.i("checkstuff", "Clicked");
     }
-
 
 
 }
