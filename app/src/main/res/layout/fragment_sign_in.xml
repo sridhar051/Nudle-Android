@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/nudle_bg"
-    tools:context=".userAccount.SignInActivity">
+    tools:context=".userAccount.SignInFragment">
 
 
     <ImageView

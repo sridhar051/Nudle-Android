@@ -5,4 +5,7 @@
     <color name="colorAccent">#ffffff</color>
     <color name="successGreen">#11A10C</color>
     <color name="RecyclerViewBackground">#d6d6d6</color>
+    <color name="splash">#ff8080</color>
+    <color name="white">#fff</color>
+    <color name="orange">#ff5c33</color>
 </resources>

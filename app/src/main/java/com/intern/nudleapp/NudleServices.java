@@ -1,5 +1,7 @@
 package com.intern.nudleapp;
 
+import com.intern.nudleapp.models.UserResponse;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -21,6 +23,14 @@ public interface NudleServices {
                                        @Field("email") String email,
                                        @Field("mobile") String mobile,
                                        @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("https://api.textlocal.in/send")
+    Call<UserResponse> getOTP (@Field("apiKey") String apiKey,
+                               @Field("numbers") String numbers,
+                               @Field("message") String message,
+                               @Field("sender") String sender
     );
 
 }

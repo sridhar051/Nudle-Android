@@ -1,18 +1,25 @@
 package com.intern.nudleapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.errorprone.annotations.ForOverride;
+import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +30,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private TabLayout viewpagerIndicator;
     private ViewPager productDetailsViewpager;
     private TabLayout productDetailsTablayout;
+
+
 
     //////rating layout
     private LinearLayout rateNowContainer;
@@ -35,7 +44,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar mtool = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mtool);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         productImagesViewPager = findViewById(R.id.viewPager);
         viewpagerIndicator = findViewById(R.id.viewpager_indicator);
         addToWishListBtn = findViewById(R.id.add_to_wish_list_button);
@@ -104,6 +117,29 @@ public class ProductDetailsActivity extends AppCompatActivity {
         }
         ////////rating layput
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_and_cart, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+            return super.onOptionsItemSelected(item);
+        }
+        if (id == R.id.main_search_icon) {
+            //TODO search icon
+            return true;
+        }
+        if (id == R.id.main_cart_icon) {
+           //TODO cart
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void setRating(int starPosition) {
         for(int x = 0; x < rateNowContainer.getChildCount(); x++){
