@@ -20,4 +20,7 @@
     <string name="brand3">brand3</string>
     <string name="explore_by_brands">Explore by Brands</string>
     <string name="explore_brands">EXPLORE BRANDS</string>
+    <string name="cart">Item</string>
+    <string name="cart2">cart2</string>
+    <string name="cart3">cart3</string>
 </resources>

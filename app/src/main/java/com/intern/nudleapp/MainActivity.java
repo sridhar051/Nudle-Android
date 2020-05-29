@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         Toolbar mtool = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mtool);
         mtool.setTitle("Nudle App");
+        mtool.setLogo(R.drawable.applogo);
 
         loadFragment(new HomeFragment());
 
