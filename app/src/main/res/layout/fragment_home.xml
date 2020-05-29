@@ -47,10 +47,32 @@
 
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/wrapper_scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/wrapper_scroll"
+
+
+        tools:ignore="UnknownIdInLayout">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/recyclerview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/wrapper_scroll"
+        android:layout_below="@id/wrapper_scroll1"
         android:padding="5dp">
 
         <TextView
@@ -369,6 +391,7 @@
 
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
+
 
 </RelativeLayout>
     </ScrollView>

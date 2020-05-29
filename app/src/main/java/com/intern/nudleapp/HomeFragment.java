@@ -23,6 +23,7 @@ import java.util.List;
 public class HomeFragment extends Fragment{
 
     RecyclerView recyclerView;
+    RecyclerView recyclerView1;
     ProductAdapter adapter;
     List<Product> productList;
 
@@ -44,6 +45,11 @@ public class HomeFragment extends Fragment{
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        recyclerView1 = (RecyclerView) view.findViewById(R.id.recyclerview1);
+
+        recyclerView1.setHasFixedSize(true);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
 
         productList.add(
                 new Product(
@@ -102,6 +108,7 @@ public class HomeFragment extends Fragment{
         ProductAdapter adapter = new ProductAdapter(getContext(), productList, (ProductAdapter.OnProductListener) getContext());
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
+        recyclerView1.setAdapter(adapter);
 
 
         return view;
