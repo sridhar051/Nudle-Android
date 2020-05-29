@@ -80,6 +80,12 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         sendIntent.setType("text/plain");
                         startActivity(sendIntent);
                         break;
+                    case R.id.menu_wishlist:
+                        item.setChecked(true);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new MyWishlistFragment()).commit();
+                        break;
+
                     /*case R.id.menu_cart:
                         FragmentManager fm = getSupportFragmentManager();
                         MyCartFragment myCartFragment = new MyCartFragment();
@@ -103,6 +109,11 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new MyOrderFragment()).commit();
                         break;
+                    case R.id.menu_account:
+                        item.setChecked(true);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new MyAccountFragment()).commit();
+
                 }
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
