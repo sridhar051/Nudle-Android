@@ -1,5 +1,6 @@
 package com.intern.nudleapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
@@ -17,6 +18,8 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.errorprone.annotations.ForOverride;
+import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,22 +121,25 @@ public class ProductDetailsActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.search_and_cart, menu);
         return true;
     }
-    public boolean OnOptionsItemSlected(MenuItem item){
-        int id = item.getItemId();
-        if(id == android.R.id.home){
 
-            return true;
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+            return super.onOptionsItemSelected(item);
         }
-        if(id == R.id.main_search_icon){
+        if (id == R.id.main_search_icon) {
             //TODO search icon
             return true;
         }
-        if(id == R.id.main_cart_icon){
-            startActivity(new Intent(this, MyOrderFragment.class));
+        if (id == R.id.main_cart_icon) {
+           //TODO cart
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     private void setRating(int starPosition) {
         for(int x = 0; x < rateNowContainer.getChildCount(); x++){
