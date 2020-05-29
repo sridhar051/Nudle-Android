@@ -37,7 +37,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == android.R.id.home){
             finish();
-            // todo have a doubt on this its not giving action
+
             return true;
         }
         if(item.getItemId() == R.id.main_search_icon){
