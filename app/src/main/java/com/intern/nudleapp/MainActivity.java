@@ -3,6 +3,8 @@ package com.intern.nudleapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -35,8 +37,9 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         navigationView = (NavigationView) findViewById(R.id.main_navbar);
         Toolbar mtool = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mtool);
-        mtool.setTitle("Nudle App");
+        getSupportActionBar().setTitle("Nudle App");
         mtool.setLogo(R.drawable.applogo);
+
 
         loadFragment(new HomeFragment());
 
@@ -123,6 +126,11 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
 
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_and_cart,menu);
+        return true;
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
