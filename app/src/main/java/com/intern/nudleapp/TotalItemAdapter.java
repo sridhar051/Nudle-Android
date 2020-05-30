@@ -1,4 +1,4 @@
-package com.intern.nudleapp.Cart_Fragment;
+package com.intern.nudleapp;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +7,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.intern.nudleapp.R;
 
 import java.util.List;
 

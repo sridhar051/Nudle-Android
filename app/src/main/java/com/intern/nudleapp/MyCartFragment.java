@@ -1,5 +1,6 @@
-package com.intern.nudleapp.Cart_Fragment;
+package com.intern.nudleapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
-
-import com.intern.nudleapp.Cart_Fragment.CartAdapter;
-import com.intern.nudleapp.Cart_Fragment.CartItemModel;
-import com.intern.nudleapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +30,7 @@ public class MyCartFragment extends Fragment {
     private RecyclerView cartitemsrecyclerview ;
 //    private RecyclerView totalrecycler;
     private Toolbar toolbar;
+    private Button continueBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +38,7 @@ public class MyCartFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_my_cart, container, false);
         cartitemsrecyclerview=view.findViewById(R.id.cartitems_recycler);
+        continueBtn = view.findViewById(R.id.cart_continue_button);
 //        LinearLayoutManager layoutmanager = new LinearLayoutManager(getContext());
 //        layoutmanager.setOrientation(LinearLayoutManager.VERTICAL);
 
@@ -77,6 +77,13 @@ public class MyCartFragment extends Fragment {
         String str = "You have saved RS:"+totalModelList.get(0).getSavedamount();
         tot_saved.setText(str);
 
+        continueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent deliveryIntent = new Intent(getContext(), DeliveryActivity.class);
+                getContext().startActivity(deliveryIntent);
+            }
+        });
         return view;
 
 
