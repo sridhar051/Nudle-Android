@@ -1,10 +1,14 @@
 package com.intern.nudleapp;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+<<<<<<< HEAD
 import android.view.MenuInflater;
+=======
+>>>>>>> origin/master
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -14,12 +18,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
 import com.intern.nudleapp.userAccount.SignInFragment;
 
 
@@ -183,9 +184,23 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         }
     }
 
+    //setting menu in the appbar
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_and_cart, menu);
+        return true;
+    }
+
+
+    // this for the appBar actions
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (mToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        if (item.getItemId() == R.id.main_cart_icon) {
+            item.setChecked(true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+            new MyCartFragment()).commit();
             return true;
         }
         return super.onOptionsItemSelected(item);

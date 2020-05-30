@@ -1,6 +1,8 @@
 package com.intern.nudleapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -16,25 +18,20 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
-import com.google.errorprone.annotations.ForOverride;
-import com.intern.nudleapp.Cart_Fragment.MyCartFragment;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,14 +39,17 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private ViewPager productImagesViewPager;
     private TabLayout viewpagerIndicator;
+
     private ViewPager productDetailsViewpager;
     private TabLayout productDetailsTablayout;
     private static final int STORAGE_PERMISSION_CODE = 7;
 
-
     //////rating layout
     private LinearLayout rateNowContainer;
     //////rating layout
+
+    private Button buyNowBtn;
+
     private static boolean ALREADY_ADDED_TO_WISHLIST = false;
     private FloatingActionButton addToWishListBtn, shareButton;
 
@@ -62,8 +62,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
         requestStoragePermission();
 
         Toolbar mtool = (Toolbar) findViewById(R.id.toolbar);
+        mtool.setTitle("my title");
         setSupportActionBar(mtool);
+
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("Product Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         productImagesViewPager = findViewById(R.id.viewPager);
@@ -72,6 +75,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         //shareButton = findViewById(R.id.share_button);
         productDetailsViewpager = findViewById(R.id.product_details_viewpager);
         productDetailsTablayout = findViewById(R.id.product_details_tablayout);
+        buyNowBtn = findViewById(R.id.buy_now_btn);
 
 
         List<Integer> productImages = new ArrayList<>();
@@ -133,7 +137,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 }
             });
         }
-        ////////rating layput
+        ////////rating layout
+
+        buyNowBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent deliveryIntent = new Intent(ProductDetailsActivity.this, DeliveryActivity.class);
+                startActivity(deliveryIntent);
+            }
+        });
     }
 
     private void requestStoragePermission() {
@@ -190,7 +202,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.main_cart_icon) {
-           //TODO cart
+            item.setChecked(true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.product_details_activity,
+                    new MyCartFragment()).commit();
             return true;
         }
         return super.onOptionsItemSelected(item);
