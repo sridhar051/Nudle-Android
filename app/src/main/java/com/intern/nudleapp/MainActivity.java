@@ -87,6 +87,15 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                                 new MyWishlistFragment()).commit();
                         break;
 
+                    case R.id.menu_share_cart:
+//                        final String newlink = "NudleApp";
+                        Intent sendShareIntent = new Intent();
+                        sendShareIntent.setAction(Intent.ACTION_SEND);
+                        sendShareIntent.putExtra(Intent.EXTRA_TEXT,
+                                "" + "http://www.nudle.com/myCart");
+                        sendShareIntent.setType("text/plain");
+                        startActivity(sendShareIntent);
+                        break;
                     /*case R.id.menu_cart:
                         FragmentManager fm = getSupportFragmentManager();
                         MyCartFragment myCartFragment = new MyCartFragment();
