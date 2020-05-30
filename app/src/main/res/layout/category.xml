@@ -10,7 +10,8 @@
 
 <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="90dp"
@@ -25,12 +26,13 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="90dp"
                     android:layout_height="50dp"
-                    android:scaleType="centerCrop"
-                    android:layout_centerHorizontal="true"
                     android:id="@+id/image_view"
-                    android:src="@drawable/man"/>
+                    android:src="@drawable/pshirt"
+                    android:scaleType="centerCrop"
+                    android:layout_centerHorizontal="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,7 +75,7 @@
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view1"
-                android:src="@drawable/women"/>
+                android:src="@drawable/topwomen"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -159,7 +161,7 @@
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view3"
-                android:src="@drawable/electronics"/>
+                android:src="@drawable/tech"/>
 
             <TextView
                 android:layout_width="wrap_content"

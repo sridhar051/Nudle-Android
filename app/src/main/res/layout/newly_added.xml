@@ -2,16 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/offer">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/trending"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/trending"
+        android:text="@string/newly_added"
         android:textSize="20sp"
-
         android:textStyle="bold" />
 
     <HorizontalScrollView
@@ -42,12 +40,12 @@
                         android:adjustViewBounds="true"
                         android:id="@+id/image_view"
                         android:padding="2dp"
-                        android:src="@drawable/pshirt"/>
+                        android:src="@drawable/watch"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
-                        android:text="Printed Shirt"
+                        android:text="@string/watches"
                         android:layout_below="@+id/image_view"
                         android:id="@+id/name"
                         android:layout_centerHorizontal="true"
@@ -86,13 +84,13 @@
                         android:scaleType="fitXY"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/image_view1"
-                        android:src="@drawable/stees"
+                        android:src="@drawable/jewellary"
                         android:padding="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
-                        android:text="Summer T-shirt"
+                        android:text="@string/jewellary"
                         android:layout_below="@+id/image_view1"
                         android:id="@+id/name1"
                         android:layout_centerHorizontal="true"
