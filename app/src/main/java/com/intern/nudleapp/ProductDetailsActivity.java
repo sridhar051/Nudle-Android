@@ -164,7 +164,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.main_cart_icon) {
-           //TODO cart
+            item.setChecked(true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.product_details_activity,
+                    new MyCartFragment()).commit();
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -186,7 +186,6 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
             return true;
         }
         if (item.getItemId() == R.id.main_cart_icon) {
-            //TODO cart
             item.setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new MyCartFragment()).commit();
