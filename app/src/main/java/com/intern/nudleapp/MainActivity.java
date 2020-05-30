@@ -3,6 +3,7 @@ package com.intern.nudleapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -174,10 +175,21 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
             super.onBackPressed();
         }
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_and_cart, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (mToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        if (item.getItemId() == R.id.main_cart_icon) {
+            //TODO cart
+            item.setChecked(true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new MyCartFragment()).commit();
             return true;
         }
         return super.onOptionsItemSelected(item);
