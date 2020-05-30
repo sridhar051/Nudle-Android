@@ -61,7 +61,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productImagesViewPager = findViewById(R.id.viewPager);
         viewpagerIndicator = findViewById(R.id.viewpager_indicator);
         addToWishListBtn = findViewById(R.id.add_to_wish_list_button);
-        shareButton = findViewById(R.id.share_button);
+        //shareButton = findViewById(R.id.share_button);
         productDetailsViewpager = findViewById(R.id.product_details_viewpager);
         productDetailsTablayout = findViewById(R.id.product_details_tablayout);
 
