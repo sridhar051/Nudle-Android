@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cart_Fragment.MyCartFragment"
+    tools:context=".MyCartFragment"
     android:background="#ffffff">
 
     <!-- TODO: Update blank fragment layout -->
@@ -35,8 +35,7 @@
         android:padding="5dp"
         >
         <include layout="@layout/cart_total_amount_layout"
-            android:id="@+id/total_cart"
-            ></include>
+            android:id="@+id/total_cart"/>
     </androidx.cardview.widget.CardView>
 
 
@@ -44,12 +43,14 @@
         android:id="@+id/cart_linearLayout"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="62dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
         android:elevation="8dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal">
+
 
         <LinearLayout
             android:layout_width="match_parent"
