@@ -1,5 +1,6 @@
 package com.intern.nudleapp;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -189,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         if (item.getItemId() == R.id.main_cart_icon) {
             item.setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new MyCartFragment()).commit();
+            new MyCartFragment()).commit();
             return true;
         }
         return super.onOptionsItemSelected(item);
