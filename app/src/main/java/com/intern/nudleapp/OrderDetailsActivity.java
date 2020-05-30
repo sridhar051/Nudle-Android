@@ -27,25 +27,10 @@ public class OrderDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_and_cart, menu);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == android.R.id.home){
+        if(item.getItemId() == android.R.id.home) {
             finish();
-
-            return true;
-        }
-        if(item.getItemId() == R.id.main_search_icon){
-            //TODO search icon
-            return true;
-        }
-        if(item.getItemId() == R.id.main_cart_icon){
-            //TODO cart Action
             return true;
         }
         return super.onOptionsItemSelected(item);
