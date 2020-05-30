@@ -30,7 +30,7 @@
                     android:scaleType="centerCrop"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/image_view"
-                    android:src="@drawable/ic_launcher_background"/>
+                    android:src="@drawable/man"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view1"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/women"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -116,7 +116,7 @@
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view2"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/kids"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -159,7 +159,7 @@
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view3"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/electronics"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -202,7 +202,7 @@
                 android:scaleType="centerCrop"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_view4"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/shoes"/>
 
             <TextView
                 android:layout_width="wrap_content"

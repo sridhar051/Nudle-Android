@@ -51,14 +51,21 @@
 
     </RelativeLayout>
 
+    <include android:id="@+id/offer"
+        layout="@layout/offer_layout"
+        android:layout_below="@+id/wrapper_scroll"
+
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
     <RelativeLayout
         android:id="@+id/wrapper_scroll1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/wrapper_scroll"
+        android:layout_below="@+id/offer"
 
 
-        tools:ignore="UnknownIdInLayout">
+        tools:ignore="UnknownId,UnknownIdInLayout">
 
 
         <androidx.recyclerview.widget.RecyclerView
