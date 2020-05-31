@@ -174,15 +174,30 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 " ** Product link ** ");
         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
         shareIntent.setType("image/jpeg");
-        startActivity(Intent.createChooser(shareIntent, "Share via : "));
+        startActivityForResult(Intent.createChooser(shareIntent, "Share via : "), 1000);
     }
 
     private Uri getImageUri() {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shop1);
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
-        return Uri.parse(path);
+
+        try {
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shop1);
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+            String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+            return Uri.parse(path);
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            return null;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1000) {
+            Toast.makeText(this, resultCode + "", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
