@@ -5,10 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-<<<<<<< HEAD
+
 import android.view.MenuInflater;
-=======
->>>>>>> origin/master
+
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -136,11 +135,6 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_and_cart,menu);
-        return true;
-    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
