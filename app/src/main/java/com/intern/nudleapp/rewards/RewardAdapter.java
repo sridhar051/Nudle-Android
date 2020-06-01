@@ -1,5 +1,7 @@
 package com.intern.nudleapp.rewards;
 
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +20,16 @@ public class RewardAdapter extends RecyclerView.Adapter<RewardAdapter.RewardView
 
     public static class RewardViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView status;
-        public TextView nudle_cash;
+        public TextView status, nudle_cash, terms_and_conditions;
+        public View strike_view;
 
         public RewardViewHolder(@NonNull View itemView) {
             super(itemView);
 
             status = itemView.findViewById(R.id.text_status);
             nudle_cash = itemView.findViewById(R.id.text_nudle_cash);
+            terms_and_conditions = itemView.findViewById(R.id.terms);
+            strike_view = itemView.findViewById(R.id.strike);
         }
     }
 
@@ -45,6 +49,13 @@ public class RewardAdapter extends RecyclerView.Adapter<RewardAdapter.RewardView
         Reward reward = rewards.get(position);
         holder.status.setText(reward.getStatus());
         holder.nudle_cash.setText(reward.getNudle_cash());
+        holder.terms_and_conditions
+                .setPaintFlags(holder.terms_and_conditions.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        if (reward.getStatus().equalsIgnoreCase("expired")) {
+            holder.status.setTextColor(Color.parseColor("#FA0101"));
+            holder.strike_view.setBackgroundColor(Color.parseColor("#FA0101"));
+        } else
+            holder.status.setTextColor(Color.parseColor("#11A10C"));
     }
 
     @Override
