@@ -17,4 +17,5 @@ public class Reward {
     public String getNudle_cash() {
         return nudle_cash;
     }
+
 }
