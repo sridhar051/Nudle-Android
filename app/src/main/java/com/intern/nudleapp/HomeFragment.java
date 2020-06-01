@@ -26,6 +26,7 @@ public class HomeFragment extends Fragment{
     RecyclerView recyclerView1;
     ProductAdapter adapter;
     List<Product> productList;
+    List<Product> traditionallist;
 
     private int[] mimages = new int[]{
             R.drawable.c15, R.drawable.c14, R.drawable.c16
@@ -39,6 +40,7 @@ public class HomeFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         productList = new ArrayList<>();
+        traditionallist=new ArrayList<>();
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
@@ -86,6 +88,53 @@ public class HomeFragment extends Fragment{
                         60000,
                         R.drawable.h4));
 
+        traditionallist.add(
+                new Product(
+                        1,
+                        "50% OFF",
+                        "sale",
+                        4.3,
+                        60000,
+                        R.drawable.traditional1));
+
+        traditionallist.add(
+                new Product(
+                        1,
+                        "SHOP NOW",
+                        "sale",
+                        4.3,
+                        60000,
+                        R.drawable.traditional2));
+
+        traditionallist.add(
+                new Product(
+                        1,
+                        "25% OFF",
+                        "sale",
+                        4.3,
+                        60000,
+                        R.drawable.traditional3));
+
+        traditionallist.add(
+                new Product(
+                        1,
+                        "SHOP NOW",
+                        "sale",
+                        4.3,
+                        60000,
+                        R.drawable.traditional4));
+
+        traditionallist.add(
+                new Product(
+                        1,
+                        "80% OFF",
+                        "sale",
+                        4.3,
+                        60000,
+                        R.drawable.traditional5));
+
+
+
 
         CarouselView carouselView = view.findViewById(R.id.carousel);
         carouselView.setPageCount(mimages.length);
@@ -106,9 +155,10 @@ public class HomeFragment extends Fragment{
 
         //creating recyclerview adapter
         ProductAdapter adapter = new ProductAdapter(getContext(), productList, (ProductAdapter.OnProductListener) getContext());
+        ProductAdapter adapter1 = new ProductAdapter(getContext(), traditionallist, (ProductAdapter.OnProductListener) getContext());
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
-        recyclerView1.setAdapter(adapter);
+        recyclerView1.setAdapter(adapter1);
 
 
         return view;

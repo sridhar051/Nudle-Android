@@ -64,7 +64,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_gravity="center"
-                app:srcCompat="@mipmap/address_image_foreground" />
+
+            />
 
             <EditText
                 android:id="@+id/city"

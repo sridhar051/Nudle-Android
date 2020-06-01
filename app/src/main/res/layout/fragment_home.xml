@@ -90,11 +90,19 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/brands"
                 tools:ignore="UnknownId,UnknownIdInLayout">
+                <TextView
+                    android:id="@+id/traditional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TRADITIONAL WEAR"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/traditional">
 
                 </androidx.recyclerview.widget.RecyclerView>
             </RelativeLayout>
