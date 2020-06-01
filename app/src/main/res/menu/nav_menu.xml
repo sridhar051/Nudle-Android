@@ -15,17 +15,52 @@
             android:title="Customized Goods" />
     </group>
 
+    <item android:title="My">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_orders"
+                    android:icon="@drawable/my_orders"
+                    android:title="Orders" />
+                <item
+                    android:id="@+id/menu_wishlist"
+                    android:icon="@drawable/ic_favorite_24px"
+                    android:title="WishList" />
+
+                <item
+                    android:id="@+id/menu_rewards"
+                    android:icon="@drawable/gitfs"
+                    android:title="Rewards"
+                    />
+
+                <item
+                    android:id="@+id/menu_account"
+                    android:icon="@drawable/default_user_black"
+                    android:title="Account" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_share"
+                    android:icon="@drawable/ic_share"
+                    android:title="Share" />
+
+                <item
+                    android:id="@+id/menu_share_cart"
+                    android:icon="@drawable/menu_rate"
+                    android:title="Share Cart" />
+            </group>
+        </menu>
+    </item>
+
     <group
         android:id="@+id/menu_users_func"
         android:checkableBehavior="single">
-        <item
-            android:id="@+id/menu_orders"
-            android:icon="@drawable/my_orders"
-            android:title="My Orders" />
-        <item
-            android:id="@+id/menu_wishlist"
-            android:icon="@drawable/ic_favorite_24px"
-            android:title="My WishList" />
+
       <!--  *  -->
 
        <!-- we will add cart and search bar in the bottom or top nav bar -->
@@ -36,18 +71,11 @@
             android:id="@+id/menu_cart"
             android:icon="@drawable/my_wishlist"
             android:title="My Cart" />-->
-        <item
-            android:id="@+id/menu_account"
-            android:icon="@drawable/default_user_black"
-            android:title="My Account" />
+
         <item
             android:id="@+id/menu_profile"
             android:icon="@drawable/default_user_black"
             android:title="Profile" />
-        <item
-            android:id="@+id/menu_share"
-            android:icon="@drawable/ic_share"
-            android:title="Share" />
         <item
             android:id="@+id/menu_settings"
             android:icon="@drawable/menu_settings"
@@ -58,10 +86,6 @@
         android:id="@+id/menu_dev_func"
         android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/menu_rate"
-            android:icon="@drawable/menu_rate"
-            android:title="Rate Us" />
         <item
             android:id="@+id/menu_login"
             android:icon="@drawable/default_user_black"

@@ -23,4 +23,11 @@
     <string name="cart">Item</string>
     <string name="cart2">cart2</string>
     <string name="cart3">cart3</string>
+    <string name="trending">TRENDING</string>
+    <string name="newly_added">NEWLY ADDED</string>
+    <string name="up_to_70_off">up to 70% off</string>
+    <string name="up_to_50_off">up to 50% off</string>
+    <string name="up_to_60_off">up to 60% off</string>
+    <string name="watches">Watches</string>
+    <string name="jewellary">Jewellary</string>
 </resources>

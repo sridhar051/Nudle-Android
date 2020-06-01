@@ -6,11 +6,13 @@
         android:icon="@drawable/search_icon"
         android:orderInCategory="100"
         app:showAsAction="always"
-        android:title="search"/>
+        android:title="search"
+        android:iconTint="@color/colorAccent"/>
     <item
         android:id="@+id/main_cart_icon"
         android:icon="@drawable/cart"
         android:orderInCategory="100"
         app:showAsAction="always"
-        android:title="Cart"/>
+        android:title="Cart"
+        android:iconTint="@color/colorAccent"/>
 </menu>

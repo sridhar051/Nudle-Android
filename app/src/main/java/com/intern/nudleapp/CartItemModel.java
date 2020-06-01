@@ -1,4 +1,4 @@
-package com.intern.nudleapp.Cart_Fragment;
+package com.intern.nudleapp;
 
 public class CartItemModel {
 //    public static final int CART_ITEM=0;

@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment{
     List<Product> productList;
 
     private int[] mimages = new int[]{
-            R.drawable.sale1, R.drawable.sale2, R.drawable.sale3
+            R.drawable.c15, R.drawable.c14, R.drawable.c16
     };
 
 
