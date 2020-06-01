@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyAddressesActivity"></activity>
+        <activity android:name=".MyAddressesActivity" />
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".ShareCart.SharedCart">
             <intent-filter>
@@ -64,10 +64,10 @@
             </intent-filter>
         </receiver>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
