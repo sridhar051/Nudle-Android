@@ -17,12 +17,13 @@
 
 		//GET users
 
-		public function get() {
+		public function get_all() {
 
 			//Create a query
 			$query = 'SELECT 
 				u.name,
 				u.email,
+				u.mobile,
 				u.password
 				FROM 
 				' . $this->table . ' u ';
