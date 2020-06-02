@@ -106,6 +106,14 @@
 
                 </androidx.recyclerview.widget.RecyclerView>
             </RelativeLayout>
+
+            <include
+                android:id="@+id/offersd"
+                layout="@layout/offershome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wrapper_scroll1" />
+
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>
