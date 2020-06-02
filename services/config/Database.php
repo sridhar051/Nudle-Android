@@ -2,9 +2,9 @@
 	
 	class Database {
 
-		private $host = 'localhost';
-		private $username = 'aagam';
-		private $password = 'aagam26';
+		private $host = 'mysql.hostinger.com';
+		private $username = 'u261274100_nudleecommerce';
+		private $password = 'u261274100_nudleecommerce';
 		private $db_name = 'u261274100_nudleecommerce';
 		private $conn;
 

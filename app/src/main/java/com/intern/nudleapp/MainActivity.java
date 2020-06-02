@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+<<<<<<< HEAD
 import android.view.MenuInflater;
+=======
+>>>>>>> origin/master
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -181,7 +184,11 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         }
     }
 
-  
+    //setting menu in the appbar
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search_and_cart, menu);
+        return true;
+    }
 
 
     // this for the appBar actions

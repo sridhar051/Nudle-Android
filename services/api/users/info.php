@@ -14,7 +14,7 @@
 	$user = new User($db);
 
 	// User query
-	$result = $user->get();
+	$result = $user->get_all();
 	
 	// Get row count
 	$num = $result->rowCount();
@@ -23,7 +23,7 @@
 	if($num > 0) {
 		// user array
 		$user_array = array();
-		$user_array = array();
+		$user_array['data'] = array();
 
 		while($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
@@ -31,6 +31,7 @@
 			$user_info = array(
 				'name' => $name,
 				'email' => $email,
+				'mobile' => $mobile,
 				'password' => $password
 			);
 

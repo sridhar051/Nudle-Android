@@ -1,97 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="62dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent">
 
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-<RelativeLayout
-    android:id="@+id/fragment_home"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-<include android:id="@+id/top"
-    layout="@layout/category"/>
-
-    <androidx.cardview.widget.CardView android:layout_height="wrap_content"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_below="@+id/top"
-        android:id="@+id/carousel11"
-        app:cardElevation="50dp"
-        app:cardCornerRadius="15dp">
-        <com.synnapps.carouselview.CarouselView
-            android:id="@+id/carousel"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/fragment_home"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:fillColor="#FFFFFFFF"
-            app:pageColor="#FFFFFFFF"
-            app:radius="6dp"
-            app:slideInterval="3000"
-            app:strokeColor="#FF777777"
-            app:strokeWidth="1dp"
-            />
+            android:layout_height="wrap_content">
 
-    </androidx.cardview.widget.CardView>
+            <include
+                android:id="@+id/top"
+                layout="@layout/category" />
 
-    <include android:id="@+id/offer"
-        layout="@layout/offer_layout"
-        android:layout_below="@+id/carousel11"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"/>
-
-    <include android:id="@+id/offer2"
-        layout="@layout/newly_added"
-        android:layout_below="@id/offer"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/wrapper_scroll"
-        android:layout_below="@+id/offer2"
-        android:layout_marginTop="10dp"
-        android:layout_above="@+id/navigation"
-        tools:ignore="UnknownIdInLayout">
-
-
-            <androidx.recyclerview.widget.RecyclerView
-
-                android:id="@+id/recyclerview"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carousel11"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="50dp">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <com.synnapps.carouselview.CarouselView
+                    android:id="@+id/carousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:fillColor="#FFFFFFFF"
+                    app:pageColor="#FFFFFFFF"
+                    app:radius="6dp"
+                    app:slideInterval="3000"
+                    app:strokeColor="#FF777777"
+                    app:strokeWidth="1dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <include
+                android:id="@+id/offer"
+                layout="@layout/offer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/carousel11"
+                android:layout_marginTop="10dp" />
+
+            <include
+                android:id="@+id/offer2"
+                layout="@layout/newly_added"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/offer" />
+
+            <RelativeLayout
+                android:id="@+id/wrapper_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/navigation"
+                android:layout_below="@+id/offer2"
+                android:layout_marginTop="10dp"
+                tools:ignore="UnknownIdInLayout">
 
 
-    </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
 
-    <include
-        android:id="@+id/brands"
-        layout="@layout/explore_brands"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@id/wrapper_scroll"/>
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:id="@+id/wrapper_scroll1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/brands"
-        tools:ignore="UnknownId,UnknownIdInLayout">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                </androidx.recyclerview.widget.RecyclerView>
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </RelativeLayout>
-</RelativeLayout>
+
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/brands"
+                layout="@layout/explore_brands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wrapper_scroll" />
+
+            <RelativeLayout
+                android:id="@+id/wrapper_scroll1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/brands"
+                tools:ignore="UnknownId,UnknownIdInLayout">
+                <TextView
+                    android:id="@+id/traditional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TRADITIONAL WEAR"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/traditional">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+        </RelativeLayout>
     </ScrollView>
 </LinearLayout>

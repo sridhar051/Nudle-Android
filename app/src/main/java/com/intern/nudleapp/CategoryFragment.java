@@ -39,36 +39,36 @@ public class CategoryFragment extends Fragment {
         productList.add(
                 new Product(
                         1,
-                        " shopping",
+                        "women shopping",
                         "sale",
                         4.3,
                         60000,
-                        R.drawable.category1));
+                        R.drawable.womenfashion));
 
         productList.add(
                 new Product(
                         1,
-                        "girls shopping",
+                        "men shopping",
                         "girls",
                         4.3,
                         60000,
-                        R.drawable.category2));
+                        R.drawable.menfashion));
         productList.add(
                 new Product(
                         1,
-                        "boys shopping",
+                        "kids shopping",
                         "boys",
                         4.3,
                         60000,
-                        R.drawable.category4));
+                        R.drawable.kidsfashion));
         productList.add(
                 new Product(
                         1,
-                        "shoes shopping",
+                        "jewellery shopping",
                         "shoes",
                         4.3,
                         60000,
-                        R.drawable.category3));
+                        R.drawable.jewellery));
 
         productList.add(
                 new Product(
