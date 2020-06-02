@@ -5,12 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-<<<<<<< HEAD
 import android.view.MenuInflater;
-=======
->>>>>>> origin/master
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.intern.nudleapp.userAccount.SignInFragment;
@@ -184,11 +179,6 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         }
     }
 
-    //setting menu in the appbar
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search_and_cart, menu);
-        return true;
-    }
 
 
     // this for the appBar actions
