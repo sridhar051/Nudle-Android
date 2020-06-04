@@ -31,7 +31,7 @@ public class ProductDetailsAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-
+        //Test
         return totalTabs;
     }
 }
