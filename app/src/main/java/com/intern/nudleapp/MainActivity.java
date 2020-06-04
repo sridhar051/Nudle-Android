@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.intern.nudleapp.rewards.RewardsFragment;
 import com.intern.nudleapp.userAccount.SignInFragment;
 
 
@@ -84,6 +85,12 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new MyWishlistFragment()).commit();
+                        break;
+
+                    case R.id.menu_rewards:
+                        item.setChecked(true);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new RewardsFragment()).commit();
                         break;
 
                     case R.id.menu_share_cart:
