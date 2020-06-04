@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,9 @@ public class MyAddressesActivity extends AppCompatActivity {
     private static AddressesAdapter addressesAdapter;
     private Button deliverHereBtn;
 
+    private TextView addNewAddress;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,7 @@ public class MyAddressesActivity extends AppCompatActivity {
 
         myAddressesRecyclerView = findViewById(R.id.addresses_recycler_view);
         deliverHereBtn = findViewById(R.id.delivery_here_button);
+        addNewAddress = findViewById(R.id.tv_add_new_address);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
@@ -61,7 +67,17 @@ public class MyAddressesActivity extends AppCompatActivity {
         myAddressesRecyclerView.setAdapter(addressesAdapter);
         ((SimpleItemAnimator)myAddressesRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         addressesAdapter.notifyDataSetChanged();
+
+        addNewAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addNewAddressIntent = new Intent( MyAddressesActivity.this,AddAddressActivity.class);
+                startActivity(addNewAddressIntent);
+            }
+        });;
     }
+
+
 
     public static void refreshItem(int deselect,int select){
         addressesAdapter.notifyItemChanged(deselect);
