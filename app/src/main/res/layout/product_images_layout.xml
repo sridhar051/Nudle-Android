@@ -45,7 +45,7 @@
                 android:layout_marginEnd="2dp"
                 android:text="4.0"
                 android:background="@color/successGreen"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <ImageView
@@ -56,7 +56,7 @@
                 android:layout_marginEnd="2dp"
                 android:background="@color/successGreen"
                 android:src="@mipmap/star_black_foreground"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/white" />
 
         </LinearLayout>
 

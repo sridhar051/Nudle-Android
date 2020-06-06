@@ -30,7 +30,7 @@
                     android:layout_gravity="left"
                     android:singleLine="true"
                     android:text="Order details"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
             </androidx.appcompat.widget.Toolbar>

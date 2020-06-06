@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,7 +34,6 @@ public class SignInFragment extends Fragment {
         user_email = view.findViewById(R.id.user_email_SignIn);
         user_password = view.findViewById(R.id.user_password_SignIn);
 
-
         text_SignUp = view.findViewById(R.id.textView_SignUp);
 
         text_SignUp.setPaintFlags(text_SignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -53,6 +53,12 @@ public class SignInFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
+            getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
     }
 
     private void createSession() {

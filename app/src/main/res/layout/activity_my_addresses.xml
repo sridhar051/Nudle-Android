@@ -38,7 +38,7 @@
                     android:layout_gravity="left"
                     android:singleLine="true"
                     android:text="My Addresses"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
             </androidx.appcompat.widget.Toolbar>
@@ -49,7 +49,7 @@
         android:id="@+id/add_new_address_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@color/white"
         android:elevation="4dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +97,7 @@
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/white"
         android:stateListAnimator="@null"
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"

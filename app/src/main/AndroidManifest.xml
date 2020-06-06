@@ -42,7 +42,8 @@
             android:screenOrientation="nosensor" />
         <activity
             android:name=".userAccount.SignUpActivity"
-            android:screenOrientation="nosensor" />
+            android:screenOrientation="nosensor"/>
+
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".OrderDetailsActivity" />
         <activity
@@ -58,7 +59,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="nosensor" />
+            android:screenOrientation="nosensor"/>
+        
 
         <receiver
             android:name=".userAccount.SMSBroadcastReceiver"
