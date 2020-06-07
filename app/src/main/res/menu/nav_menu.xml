@@ -86,12 +86,11 @@
         android:id="@+id/menu_dev_func"
         android:checkableBehavior="single">
 
-       <!--
         <item
             android:id="@+id/menu_login"
             android:icon="@drawable/default_user_black"
             android:title="Login"/>
-            -->
+
         <item
             android:id="@+id/menu_logout"
             android:icon="@drawable/logout"

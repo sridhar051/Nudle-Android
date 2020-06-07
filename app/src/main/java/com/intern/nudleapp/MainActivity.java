@@ -116,14 +116,12 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                     //    startActivity(new Intent(MainActivity.this, ProductDetailsActivity.class));
                     //    break;
                     //Commenting login from navigation menu as this is viewd only after user logs in
-                    /*
                     case R.id.menu_login:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new SignInFragment()).commit();
                         break;
 
-                     */
                     case R.id.menu_orders:
                         item.setChecked(true);
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
