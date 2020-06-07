@@ -28,6 +28,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.hbb20.CountryCodePicker;
 import com.intern.nudleapp.APIClient;
 import com.intern.nudleapp.NudleServices;
 import com.intern.nudleapp.R;
@@ -45,24 +46,20 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class SignUpActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
-        OTPReceive, GoogleApiClient.OnConnectionFailedListener, OTPDialog.CustomDialogListener {
+        OTPReceive, GoogleApiClient.OnConnectionFailedListener {
 
-    private TextInputLayout user_name, user_email, user_password, user_confirmed_password, user_mobile;
-    private String inputName, inputEmail, inputMobile, inputPassword, inputConfirmedPassword;
+    private TextInputLayout user_name, user_email, user_password, user_confirmed_password;
+    private String inputName, inputEmail, inputPassword, inputConfirmedPassword;
     private GoogleApiClient mGoogleApiClient;
     private int RESOLVE_HINT = 2;
-    OTPDialog mOTPDialog = null;
+    private CountryCodePicker countryCodePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        user_mobile = findViewById(R.id.user_mobile);
-        user_email = findViewById(R.id.user_email_SignUp);
-        user_name = findViewById(R.id.user_name_SignUp);
-        user_password = findViewById(R.id.user_password_SignUp);
-        user_confirmed_password = findViewById(R.id.user_confirm_password_SignUp);
+        init();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -72,6 +69,13 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
 
         getMobileNumber();
 
+    }
+
+    private void init() {
+        user_email = findViewById(R.id.user_email_SignUp);
+        user_name = findViewById(R.id.user_name_SignUp);
+        user_password = findViewById(R.id.user_password_SignUp);
+        user_confirmed_password = findViewById(R.id.user_confirm_password_SignUp);
     }
 
     private boolean validateEmail() {
@@ -96,21 +100,10 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
         }
     }
 
-    private boolean validateMobile() {
-        inputMobile = user_mobile.getEditText().getText().toString().trim();
-        if(inputMobile.isEmpty()) {
-            user_mobile.setError("*  PLEASE TYPE IN YOUR MOBILE NUMBER!!");
-            return false;
-        } else {
-            user_mobile.setError(null);
-            return true;
-        }
-    }
-
     private boolean validatePassword() {
         inputPassword = user_password.getEditText().getText().toString().trim();
         if(inputPassword.isEmpty()) {
-            user_password.setError("*  PLEASE TYPE IN YOUR MOBILE NUMBER!!");
+            user_password.setError("*  PLEASE TYPE IN YOUR PASSWORD!");
             return false;
         } else {
             user_password.setError(null);
@@ -133,8 +126,10 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     public void verifyUser(View v) {
-        if(!validateName() | !validateEmail() | !validateMobile() | !validatePassword() | !validateConfirmPassword())
+        if(!validateName() | !validateEmail() | !validatePassword() | !validateConfirmPassword())
             return;
+
+        startActivity(new Intent(this, OTPActivity.class));
 
       /*  int randomNumber = new Random().nextInt(999999);
         Retrofit retrofit = APIClient.getRetrofitInstance();
@@ -203,7 +198,7 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
 
     public void getMobileNumber() {
         HintRequest hintRequest = new HintRequest.Builder()
-                .setPhoneNumberIdentifierSupported(true)
+                .setEmailAddressIdentifierSupported(true)
                 .build();
 
         PendingIntent pendingIntent = Auth.CredentialsApi.getHintPickerIntent(mGoogleApiClient,
@@ -223,7 +218,10 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
         if(requestCode == RESOLVE_HINT) {
             if(resultCode == Activity.RESULT_OK) {
                 Credential credential = data.getParcelableExtra(Credential.EXTRA_KEY);
-                user_mobile.getEditText().setText(credential.getId());
+                String name = credential.getName();
+                String email = credential.getId();
+                user_name.getEditText().setText(name);
+                user_email.getEditText().setText(email);
             }
         }
     }
@@ -260,10 +258,6 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
 
     }
 
-    @Override
-    public void onOTPVerification() {
-        Toast.makeText(this, "Verified", Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void onOtpReceived(String otp) {

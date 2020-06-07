@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,13 +19,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyAddressesActivity"/>
+        <activity android:name=".userAccount.OTPActivity"/>
+        <activity android:name=".MyAddressesActivity" />
         <activity android:name=".DeliveryActivity" />
-        <activity android:name=".AddAddressActivity"  android:theme="@style/RedProgressBarTheme"/>
+        <activity
+            android:name=".AddAddressActivity"
+            android:theme="@style/RedProgressBarTheme" />
         <activity android:name=".ShareCart.SharedCart">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
@@ -42,8 +50,7 @@
             android:screenOrientation="nosensor" />
         <activity
             android:name=".userAccount.SignUpActivity"
-            android:screenOrientation="nosensor"/>
-
+            android:screenOrientation="nosensor" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".OrderDetailsActivity" />
         <activity
@@ -59,8 +66,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="nosensor"/>
-        
+            android:screenOrientation="nosensor" />
 
         <receiver
             android:name=".userAccount.SMSBroadcastReceiver"
@@ -70,10 +76,5 @@
             </intent-filter>
         </receiver>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
 </manifest>
