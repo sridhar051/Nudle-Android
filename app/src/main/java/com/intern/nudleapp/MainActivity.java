@@ -20,7 +20,7 @@ import com.intern.nudleapp.rewards.RewardsFragment;
 import com.intern.nudleapp.userAccount.SignInFragment;
 
 
-public class MainActivity extends AppCompatActivity implements ProductAdapter.OnProductListener, BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements ProductAdapter.OnProductListener, BottomNavigationView.OnNavigationItemSelectedListener ,CustomgoodsAdapter.OnProductListener{
 
     NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
@@ -71,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         item.setChecked(true);
 //                        Toast.makeText(MainActivity.this,"checked",Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MainActivity.this, ProfilePageActivity.class));
+                        break;
+                    case R.id.menu_cust_goods:
+                        item.setChecked(true);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                new Customgoods_Fragment()).commit();
                         break;
                     case R.id.menu_share:
                         final String appPackageName = "NudleApp";
