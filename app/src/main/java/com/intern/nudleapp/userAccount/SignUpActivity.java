@@ -67,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
                 .addApi(Auth.CREDENTIALS_API)
                 .build();
 
-        getMobileNumber();
+        getUserAccount();
 
     }
 
@@ -196,7 +196,7 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
 
     }
 
-    public void getMobileNumber() {
+    public void getUserAccount() {
         HintRequest hintRequest = new HintRequest.Builder()
                 .setEmailAddressIdentifierSupported(true)
                 .build();
