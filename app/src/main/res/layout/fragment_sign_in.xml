@@ -32,13 +32,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:theme="@style/RedProgressBarTheme"
+                android:theme="@style/TextInputLayoutStyle"
                 android:padding="20dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/user_email_SignIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:boxBackgroundMode="outline"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
                     app:errorEnabled="true"
                     android:layout_marginBottom="5dp"
                     >
@@ -57,9 +64,16 @@
                     android:id="@+id/user_password_SignIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:boxBackgroundMode="outline"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
                     app:errorEnabled="true"
                     app:passwordToggleEnabled="true"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="10dp"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
