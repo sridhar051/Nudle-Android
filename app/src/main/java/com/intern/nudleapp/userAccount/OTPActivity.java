@@ -3,6 +3,7 @@ package com.intern.nudleapp.userAccount;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +31,9 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
         GoogleApiClient.OnConnectionFailedListener{
 
     private CountryCodePicker countryCodePicker;
-    private TextInputLayout user_mobile, user_otp;
+    private TextInputLayout user_mobile;
+    private ConstraintLayout layout_otp;
+    private EditText[] digits = new EditText[6];
     private TextView otp_resend;
     private String inputMobile, inputOTP;
     private Button button_getOTP;
@@ -56,9 +60,16 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
     private void init() {
         countryCodePicker = findViewById(R.id.ccp);
         user_mobile = findViewById(R.id.user_mobile_SignUp);
-        user_otp = findViewById(R.id.user_otp);
         otp_resend = findViewById(R.id.resend_otp);
         button_getOTP = findViewById(R.id.button_getOTP);
+
+        layout_otp = findViewById(R.id.layout_otp);
+
+        for (int digit = 0; digit < 6; digit++) {
+            String id = "digit_" + (digit + 1);
+            int resId = getResources().getIdentifier(id, "id", getPackageName());
+            digits[digit] = findViewById(resId);
+        }
     }
 
 
@@ -110,7 +121,7 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
         if (!validateMobile())
             return;
 
-        user_otp.setVisibility(View.VISIBLE);
+        layout_otp.setVisibility(View.VISIBLE);
         otp_resend.setVisibility(View.VISIBLE);
         button_getOTP.setText("VERIFY");
         Toast.makeText(this, countryCodePicker.getFullNumber(), Toast.LENGTH_SHORT).show();
