@@ -52,6 +52,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private static boolean ALREADY_ADDED_TO_WISHLIST = false;
     private FloatingActionButton addToWishListBtn, shareButton;
+    private Button img_btn;
 
 
     @Override
@@ -60,6 +61,12 @@ public class ProductDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_details);
 
         requestStoragePermission();
+        Intent intent=getIntent();
+        String activity=intent.getStringExtra("prev_act");
+        if(activity.equals("Custom_goods")){
+            img_btn=findViewById(R.id.btn_img_upload);
+            img_btn.setVisibility(View.VISIBLE);
+        }
 
         Toolbar mtool = (Toolbar) findViewById(R.id.toolbar);
         mtool.setTitle("my title");
@@ -234,5 +241,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 starBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffbb00")));
             }
         }
+    }
+    public void get_image(View view){
+
+        Toast.makeText(this,"User will upload",Toast.LENGTH_LONG).show();
     }
 }
