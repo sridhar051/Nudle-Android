@@ -16,8 +16,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/wrapper_scroll"
-                android:layout_below="@+id/carousel"
-                android:layout_above="@+id/navigation"
                 tools:ignore="UnknownIdInLayout">
 
 
