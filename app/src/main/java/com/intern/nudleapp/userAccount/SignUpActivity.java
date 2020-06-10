@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.credentials.Credential;
+import com.google.android.gms.auth.api.credentials.CredentialPickerConfig;
+import com.google.android.gms.auth.api.credentials.Credentials;
+import com.google.android.gms.auth.api.credentials.CredentialsClient;
 import com.google.android.gms.auth.api.credentials.HintRequest;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
@@ -45,14 +48,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class SignUpActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
-        OTPReceive, GoogleApiClient.OnConnectionFailedListener {
+public class SignUpActivity extends AppCompatActivity implements OTPReceive {
 
     private TextInputLayout user_name, user_email, user_password, user_confirmed_password;
     private String inputName, inputEmail, inputPassword, inputConfirmedPassword;
-    private GoogleApiClient mGoogleApiClient;
     private int RESOLVE_HINT = 2;
     private CountryCodePicker countryCodePicker;
+    private CredentialsClient mCredentialsClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +62,6 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
         setContentView(R.layout.activity_sign_up);
 
         init();
-
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .enableAutoManage(this, this)
-                .addApi(Auth.CREDENTIALS_API)
-                .build();
 
         getUserAccount();
 
@@ -76,6 +72,8 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
         user_name = findViewById(R.id.user_name_SignUp);
         user_password = findViewById(R.id.user_password_SignUp);
         user_confirmed_password = findViewById(R.id.user_confirm_password_SignUp);
+
+        mCredentialsClient = Credentials.getClient(this);
     }
 
     private boolean validateEmail() {
@@ -198,11 +196,13 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
 
     public void getUserAccount() {
         HintRequest hintRequest = new HintRequest.Builder()
+                .setHintPickerConfig(new CredentialPickerConfig.Builder()
+                    .setShowCancelButton(true)
+                    .build())
                 .setEmailAddressIdentifierSupported(true)
                 .build();
 
-        PendingIntent pendingIntent = Auth.CredentialsApi.getHintPickerIntent(mGoogleApiClient,
-                hintRequest);
+        PendingIntent pendingIntent = mCredentialsClient.getHintPickerIntent(hintRequest);
         try {
             startIntentSenderForResult(pendingIntent.getIntentSender(), RESOLVE_HINT, null, 0, 0, 0);
         } catch (IntentSender.SendIntentException e) {
@@ -242,22 +242,6 @@ public class SignUpActivity extends AppCompatActivity implements GoogleApiClient
             }
         });
     }
-
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
-
 
     @Override
     public void onOtpReceived(String otp) {

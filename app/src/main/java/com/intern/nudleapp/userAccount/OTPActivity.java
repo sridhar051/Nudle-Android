@@ -20,15 +20,20 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.credentials.Credential;
+import com.google.android.gms.auth.api.credentials.CredentialPickerConfig;
+import com.google.android.gms.auth.api.credentials.CredentialRequest;
+import com.google.android.gms.auth.api.credentials.Credentials;
+import com.google.android.gms.auth.api.credentials.CredentialsClient;
 import com.google.android.gms.auth.api.credentials.HintRequest;
+import com.google.android.gms.auth.api.credentials.IdentityProviders;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.textfield.TextInputLayout;
 import com.hbb20.CountryCodePicker;
 import com.intern.nudleapp.R;
 
-public class OTPActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+public class OTPActivity extends AppCompatActivity {
 
     private CountryCodePicker countryCodePicker;
     private TextInputLayout user_mobile;
@@ -38,7 +43,7 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
     private String inputMobile, inputOTP;
     private Button button_getOTP;
     private int RESOLVE_HINT = 7;
-    private GoogleApiClient mGoogleApiClient;
+    private CredentialsClient mCredentialsClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +51,6 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
         setContentView(R.layout.activity_o_t_p);
 
         init();
-
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .enableAutoManage(this, this)
-                .addApi(Auth.CREDENTIALS_API)
-                .build();
 
         getMobileNumber();
 
@@ -62,6 +61,8 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
         user_mobile = findViewById(R.id.user_mobile_SignUp);
         otp_resend = findViewById(R.id.resend_otp);
         button_getOTP = findViewById(R.id.button_getOTP);
+
+        mCredentialsClient = Credentials.getClient(this);
 
         layout_otp = findViewById(R.id.layout_otp);
 
@@ -75,11 +76,13 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
 
     private void getMobileNumber() {
         HintRequest hintRequest = new HintRequest.Builder()
+                .setHintPickerConfig(new CredentialPickerConfig.Builder()
+                        .setShowCancelButton(true)
+                        .build())
                 .setPhoneNumberIdentifierSupported(true)
                 .build();
 
-        PendingIntent pendingIntent = Auth.CredentialsApi.getHintPickerIntent(mGoogleApiClient,
-                hintRequest);
+        PendingIntent pendingIntent = mCredentialsClient.getHintPickerIntent(hintRequest);
 
         try {
             startIntentSenderForResult(pendingIntent.getIntentSender(), RESOLVE_HINT, null, 0, 0, 0);
@@ -127,18 +130,4 @@ public class OTPActivity extends AppCompatActivity implements GoogleApiClient.Co
         Toast.makeText(this, countryCodePicker.getFullNumber(), Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
 }
