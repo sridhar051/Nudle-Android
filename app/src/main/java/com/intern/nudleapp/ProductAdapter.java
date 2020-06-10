@@ -55,7 +55,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             @Override
             public void onClick(View view) {
 
-                mCtx.startActivity(new Intent(mCtx,ProductDetailsActivity.class));
+                Intent intent=new Intent(mCtx,ProductDetailsActivity.class);
+                intent.putExtra("prev_act","Product");
+                mCtx.startActivity(intent);
             }
         });
 

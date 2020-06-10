@@ -69,7 +69,7 @@
             android:gravity="right"
             android:orientation="horizontal"
             android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_img_upload"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/product_price">
@@ -219,7 +219,21 @@
             app:tabBackground="@drawable/dotselector"
             app:tabIndicatorHeight="0dp"
             app:tabRippleColor="@null" />
-
+        <Button
+            android:id="@+id/btn_img_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coupon_redeemption_layout"
+            android:text="Upload your Image"
+            android:textSize="20sp"
+            app:icon="@drawable/ic_baseline_arrow_upward_24"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:gravity="center"
+            android:onClick="get_image"
+            android:visibility="gone"
+            app:iconGravity="textStart"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

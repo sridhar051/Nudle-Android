@@ -52,7 +52,9 @@ public class CustomgoodsAdapter extends RecyclerView.Adapter<CustomgoodsAdapter.
             @Override
             public void onClick(View view) {
 
-                mCtx.startActivity(new Intent(mCtx,ProductDetailsActivity.class));
+                Intent intent=new Intent(mCtx,ProductDetailsActivity.class);
+                intent.putExtra("prev_act","Custom_goods");
+                mCtx.startActivity(intent);
             }
         });
 
