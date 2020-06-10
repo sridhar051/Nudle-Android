@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment{
     List<Product> traditionallist;
 
     private int[] mimages = new int[]{
-            R.drawable.c15, R.drawable.c14, R.drawable.c16
+            R.drawable.offer, R.drawable.c16, R.drawable.c14
     };
 
 

@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,12 +33,14 @@
                     android:id="@+id/carousel"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    app:fillColor="#FFFFFFFF"
-                    app:pageColor="#FFFFFFFF"
-                    app:radius="6dp"
+                    app:fillColor="@color/white"
+                    app:pageColor="@color/white"
+                    
+
                     app:slideInterval="3000"
-                    app:strokeColor="#FF777777"
-                    app:strokeWidth="1dp" />
+                    android:outlineAmbientShadowColor="@color/white"
+                    app:strokeColor="@color/white"
+                     />
 
             </androidx.cardview.widget.CardView>
 
