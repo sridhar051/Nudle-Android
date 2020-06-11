@@ -35,7 +35,7 @@
                     android:layout_height="200dp"
                     app:fillColor="@color/white"
                     app:pageColor="@color/white"
-                    
+
 
                     app:slideInterval="3000"
                     android:outlineAmbientShadowColor="@color/white"
