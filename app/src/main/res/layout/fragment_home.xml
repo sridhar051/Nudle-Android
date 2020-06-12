@@ -78,13 +78,21 @@
 
 
             </RelativeLayout>
+            <TextView
+                android:id="@+id/brandtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXPLORE BRANDS"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_below="@id/wrapper_scroll"/>
 
             <include
                 android:id="@+id/brands"
                 layout="@layout/explore_brands"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/wrapper_scroll" />
+                android:layout_height="match_parent"
+                android:layout_below="@id/brandtitle" />
 
             <RelativeLayout
                 android:id="@+id/wrapper_scroll1"

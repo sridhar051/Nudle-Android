@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -159,6 +160,9 @@ public class HomeFragment extends Fragment{
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
         recyclerView1.setAdapter(adapter1);
+
+        GridView gridView = (GridView)view.findViewById(R.id.brandsgridview);
+        gridView.setAdapter( new BrandAdapter(getContext()));
 
 
         return view;
