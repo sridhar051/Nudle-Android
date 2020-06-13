@@ -164,6 +164,9 @@ public class HomeFragment extends Fragment{
         GridView gridView = (GridView)view.findViewById(R.id.brandsgridview);
         gridView.setAdapter( new BrandAdapter(getContext()));
 
+        GridView gridView2 = (GridView)view.findViewById(R.id.brandsgridview2);
+        gridView2.setAdapter( new BrandAdapter2(getContext()));
+
 
         return view;
 

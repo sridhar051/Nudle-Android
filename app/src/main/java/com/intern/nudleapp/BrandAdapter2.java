@@ -11,16 +11,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrandAdapter extends BaseAdapter {
+public class BrandAdapter2 extends BaseAdapter {
     private final List<Item> mItems = new ArrayList<Item>();
     private final LayoutInflater mInflater;
 
-    public BrandAdapter(Context context) {
+    public BrandAdapter2(Context context) {
         mInflater = LayoutInflater.from(context);
-
-        mItems.add(new Item("upto 50% off",       R.drawable.virat,R.drawable.wrong));
-        mItems.add(new Item("upto 60% off",  R.drawable.road,R.drawable.roadster));
-        mItems.add(new Item("upto 70% off", R.drawable.selena,R.drawable.puma));
+        mItems.add(new Item("upto 80% off",      R.drawable.vermoda,R.drawable.vermodalogo));
+        mItems.add(new Item("upto 50% off",     R.drawable.hrx,R.drawable.hrxlogo));
+        mItems.add(new Item("upto 605 off",      R.drawable.levis,R.drawable.levislogo));
     }
 
 

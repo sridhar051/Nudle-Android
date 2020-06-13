@@ -93,12 +93,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/brandtitle" />
+            <include
+                android:id="@+id/brands2"
+                layout="@layout/explore_brands2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/brands" />
 
             <RelativeLayout
                 android:id="@+id/wrapper_scroll1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/brands"
+                android:layout_below="@+id/brands2"
                 tools:ignore="UnknownId,UnknownIdInLayout">
                 <TextView
                     android:id="@+id/traditional"
