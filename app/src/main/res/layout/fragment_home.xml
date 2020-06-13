@@ -27,7 +27,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/top"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="50dp">
+                app:cardElevation="25dp"
+                android:background="#fff">
 
                 <com.synnapps.carouselview.CarouselView
                     android:id="@+id/carousel"
