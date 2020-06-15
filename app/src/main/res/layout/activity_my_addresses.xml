@@ -38,6 +38,7 @@
                     android:layout_gravity="left"
                     android:singleLine="true"
                     android:text="My Addresses"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
