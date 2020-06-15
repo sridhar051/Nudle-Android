@@ -4,32 +4,12 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ScrollView android:layout_width="match_parent"
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-        <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/fragment_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/wrapper_scroll"
-                tools:ignore="UnknownIdInLayout">
-
-
-                <androidx.recyclerview.widget.RecyclerView
-
-                    android:id="@+id/recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-    </ScrollView>
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
+        android:stretchMode="columnWidth"
+        android:numColumns="2"/>
 </LinearLayout>

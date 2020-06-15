@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,71 +14,61 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/btext"
+    android:layout_centerVertical="true">
 
-    <androidx.cardview.widget.CardView
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:cardCornerRadius="20dp"
-        android:elevation="20dp"
-        app:cardElevation="20dp"
-        android:layout_below="@+id/btext">
+        android:layout_height="147dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+
+        <ImageView
+            android:layout_width="199dp"
             android:layout_height="match_parent"
-            >
+            android:layout_column="1"
+            android:layout_marginStart="5dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/d3" />
+
+        <ImageView
+            android:layout_width="207dp"
+            android:layout_height="130dp"
+            android:layout_column="1"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/d2" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="130dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/d4"
+            android:layout_column="1"/>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="130dp"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/d1" />
+    </TableRow>
 
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="130dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="14dp"
-                android:adjustViewBounds="true"
-                android:padding="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/d3" />
+</TableLayout>
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="130dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="158dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/d2" />
-
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="130dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginBottom="14dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/d4" />
-
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="130dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="14dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/d1" />
-
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
 
 
 

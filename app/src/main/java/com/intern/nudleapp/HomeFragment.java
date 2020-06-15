@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
@@ -29,7 +30,7 @@ public class HomeFragment extends Fragment{
     List<Product> traditionallist;
 
     private int[] mimages = new int[]{
-            R.drawable.c15, R.drawable.c14, R.drawable.c16
+            R.drawable.offer, R.drawable.c16, R.drawable.c14
     };
 
 
@@ -159,6 +160,12 @@ public class HomeFragment extends Fragment{
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
         recyclerView1.setAdapter(adapter1);
+
+        GridView gridView = (GridView)view.findViewById(R.id.brandsgridview);
+        gridView.setAdapter( new BrandAdapter(getContext()));
+
+        GridView gridView2 = (GridView)view.findViewById(R.id.brandsgridview2);
+        gridView2.setAdapter( new BrandAdapter2(getContext()));
 
 
         return view;
