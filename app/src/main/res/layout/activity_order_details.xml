@@ -30,6 +30,7 @@
                     android:layout_gravity="left"
                     android:singleLine="true"
                     android:text="Order details"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
