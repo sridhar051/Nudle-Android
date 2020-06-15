@@ -32,6 +32,7 @@
                     android:layout_gravity="left"
                     android:singleLine="true"
                     android:text="Delivery"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
             </androidx.appcompat.widget.Toolbar>
